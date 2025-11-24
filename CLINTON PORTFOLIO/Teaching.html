@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinton Oluranran Kayoh</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+ 
+</header>
+
+<!-- Theme Toggle Button -->
+<div class="theme-toggle-container">
+  <button class="theme-toggle-btn" id="themeToggleBtn">
+    <span>🎨</span>
+    <span id="currentThemeName">Default</span>
+  </button>
+  <div class="theme-menu" id="themeMenu" tabindex="0">
+    <div class="theme-option active" data-theme="default">
+      <div class="theme-color-preview" style="background: #1e3a5f;"></div>
+      <span>Default</span>
+    </div>
+    <div class="theme-option" data-theme="copper">
+      <div class="theme-color-preview" style="background: #c17d4d;"></div>
+      <span>Copper</span>
+    </div>
+    <div class="theme-option" data-theme="dark">
+      <div class="theme-color-preview" style="background: #1a1a2e;"></div>
+      <span>Dark Mode</span>
+    </div>
+    <div class="theme-option" data-theme="monochrome">
+      <div class="theme-color-preview" style="background: #ffff;"></div>
+      <span>Monochrome</span>
+    </div>
+    <div class="theme-option" data-theme="nature">
+      <div class="theme-color-preview" style="background: #2d6a4f;"></div>
+      <span>Green</span>
+    </div>
+    <div class="theme-option" data-theme="purple">
+      <div class="theme-color-preview" style="background: #6a4c93;"></div>
+      <span>Modern Purple</span>
+    </div>
+    <div class="theme-option" data-theme="gray">
+      <div class="theme-color-preview" style="background: #444;"></div>
+      <span>Gray</span>
+    </div>
+     <div class="theme-option" data-theme="red">
+      <div class="theme-color-preview" style="background: #800000;"></div>
+      <span>Red</span>
+    </div>
+     <div class="theme-option" data-theme="cyan">
+      <div class="theme-color-preview" style="background: #006064;"></div>
+      <span>Cyan</span>
+    </div>
+    <div class="theme-option" data-theme="gold">
+      <div class="theme-color-preview" style="background: #7a5901;"></div>
+      <span>Gold</span>
+    </div>
+     <div class="theme-option" data-theme="midnight">
+      <div class="theme-color-preview" style="background: #0d1b2a;"></div>
+      <span>Midnight</span>
+    </div>
+    <div class="theme-option" data-theme="brown">
+      <div class="theme-color-preview" style="background: #5c4033;"></div>
+      <span>Brown</span>
+    </div>
+     <div class="theme-option" data-theme="yellow">
+      <div class="theme-color-preview" style="background: #d4a017;"></div>
+      <span>Yellow</span>
+    </div>
+    <div class="theme-option" data-theme="orange">
+      <div class="theme-color-preview" style="background:  #ff6b35;"></div>
+      <span>Orange</span>
+    </div>
+    <div class="theme-option" data-theme="pink">
+      <div class="theme-color-preview" style="background:  #d16ba5;"></div>
+      <span>Pink</span>
+    </div>
+    <div class="theme-option" data-theme="teal">
+      <div class="theme-color-preview" style="background: #008b8b;"></div>
+      <span>Teal</span>
+    </div>
+     <div class="theme-option" data-theme="olive">
+      <div class="theme-color-preview" style="background: #708238;"></div>
+      <span>Olive</span>
+    </div>
+     <div class="theme-option" data-theme="crimson">
+      <div class="theme-color-preview" style="background:  #a4161a;"></div>
+      <span>Crimson</span>
+    </div>
+    <div class="theme-option" data-theme="amethyst">
+      <div class="theme-color-preview" style="background: #9b5de5;"></div>
+      <span>Amethyst</span>
+    </div>
+
+  </div>
+</div>
+<div><button id="textToggle" class="text-toggle">🌓 Toggle Text Color</button></div>
+
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="Research.html">Research</a>
+  <a href="Teaching.html">Teaching</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Software.html">Software</a>
+  <a href="Services.html">Services</a>
+  <a href="Awards.html">Achievements</a>
+  <a href="Resources.html">Resources</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1 class="typewriter">Clinton Oluranran Kayoh</h1>
+     <a href="index.html" class="btn">Home</a>
+      <a href="About.html" class="btn">About</a>
+    <a href="Research.html" class="btn">Research</a>
+    <a href="Teaching.html" class="btn">Teaching</a>
+     <a href="Projects.html" class="btn">Projects</a>
+    <a href="Software.html" class="btn">Software</a>
+     <a href="Services.html" class="btn">Services</a>
+     <a href="Awards.html" class="btn">Achievements</a>
+     <a href="Resources.html" class="btn">Resources</a>
+  </div>
+</section>
+
+ <!-- Hero Section -->
+    <div class="teaching-hero">
+        <div class="hero-content">
+            <h1>Teaching & Mentorship</h1>
+            <p class="hero-subtitle">Empowering Minds, Building Futures</p>
+            <p class="hero-description">
+                Welcome to my teaching journey! From tutoring over 1,000 students across diverse mathematical disciplines to mentoring innovative undergraduate research, every class I've taught and every student I've guided represents my commitment to making mathematics accessible, engaging, and transformative.
+            </p>
+            
+            <div class="stats-showcase">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1000+</div>
+                    <div class="hero-stat-label">Students Taught</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">12</div>
+                    <div class="hero-stat-label">Courses Delivered</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">22+</div>
+                    <div class="hero-stat-label">Research Projects Mentored</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down" onclick="document.querySelector('.main-container').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Photo Gallery -->
+        <div class="gallery-section">
+            <h2 class="section-title">Teaching in Action</h2>
+            <p class="section-subtitle">Moments captured while helping students overcome some mathematical and computational challenges</p>
+            
+            <div class="photo-grid">
+                <div class="photo-card" onclick="openLightbox('photo1.jpeg')">
+                    <img src="photo1.jpeg" alt="Teaching Session 1">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">Classroom engagement session</p>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('photo2.jpeg')">
+                    <img src="photo2.jpeg" alt="Teaching Session 2">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">One-on-one mentorship</p>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('photo3.jpeg')">
+                    <img src="photo3.jpeg" alt="Teaching Session 3">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">Group problem-solving</p>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('photo4.jpeg')">
+                    <img src="photo4.jpeg" alt="Teaching Session 4">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">Whiteboard demonstrations</p>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('photo5.jpeg')">
+                    <img src="photo5.jpeg" alt="Teaching Session 5">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">Interactive learning</p>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('photo6.jpeg')">
+                    <img src="photo6.jpeg" alt="Teaching Session 6">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">Student collaboration</p>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('photo7.jpeg')">
+                    <img src="photo7.jpeg" alt="Teaching Session 7">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">Concept visualization</p>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('photo8.jpeg')">
+                    <img src="photo8.jpeg" alt="Teaching Session 8">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">Discussion and feedback</p>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('photo9.jpeg')">
+                    <img src="photo9.jpeg" alt="Teaching Session 9">
+                    <div class="photo-overlay">
+                        <p class="photo-caption">Celebrating achievements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Undergraduate Teaching -->
+        <div class="experience-section">
+            <div class="experience-header">
+                <div class="experience-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div>
+                    <h2 class="experience-title">Undergraduate Teaching Experience</h2>
+                    <p style="font-size: 1.1rem; color: #666;">FUPRE STEM Center Math Tutor | 1000+ Students Impacted</p>
+                </div>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-name">General Mathematics II (MTH 121)</div>
+                    <div class="course-details">2nd Semester • College of Science and Technology • Class of 2022</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">General Physics II (PHY 121)</div>
+                    <div class="course-details">2nd Semester • College of Science and Technology • Class of 2022</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Theoretical Statistics (MTH 122)</div>
+                    <div class="course-details">2nd Semester • Math and Geoscience • Class of 2022</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Vector Analysis (MTH 215)</div>
+                    <div class="course-details">1st Semester • Math Class of 2023</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Operations Research (MTH 219)</div>
+                    <div class="course-details">1st Semester • Math and Computer Science • Class of 2023</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Real Analysis I (MTH 217)</div>
+                    <div class="course-details">1st Semester • Math Class of 2023</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Linear Algebra I (MTH 213)</div>
+                    <div class="course-details">1st Semester • College of Science • Class of 2023</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Abstract Algebra I (MTH 226)</div>
+                    <div class="course-details">2nd Semester • Math Class of 2024</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Complex Analysis I (MTH 224)</div>
+                    <div class="course-details">2nd Semester • Math Class of 2024</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Ordinary Differential Equations (MTH 312)</div>
+                    <div class="course-details">2nd Semester • Math Class of 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graduate Teaching -->
+        <div class="graduate-section">
+            <div class="experience-header">
+                <div class="experience-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h2 class="experience-title">Graduate-Level Mentorship</h2>
+                    <p style="font-size: 1.1rem; color: #666;">Math Software & Programming Instruction</p>
+                </div>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card" style="border-left-color: #764ba2;">
+                    <div class="course-name">Mathematical Modelling and Tools (MTH 715)</div>
+                    <div class="course-details">1st Semester • Math Postgraduate Diploma • Class of 2022</div>
+                </div>
+                <div class="course-card" style="border-left-color: #764ba2;">
+                    <div class="course-name">Mathematical Software (MTH 824)</div>
+                    <div class="course-details">2nd Semester • Math Masters of Science • Classes of 2022 & 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Mentorship -->
+        <div class="mentorship-section">
+            <h2 class="section-title">DiscoverU (Undergraduate Research Mentorship) </h2>
+            <div class="mentorship-intro">
+              Through the undergraduate research mentorship program and in conjunction with the Ugbene Lab, I have been able to provide mentorship to  over 20 students in carrying out undergraduate research. They learned to explore their interests, develop research questions, and document their ideas, with my expertise and experience. Specifically, guilding them on writing undergraduate dissertation, enabling them to bring their research ideas into writing.
+            </div>
+            
+            <div class="students-grid">
+                <div class="student-card">
+                    <div class="student-name">Momoh Charles Osibughe</div>
+                    <div class="project-title">Identifying Control Targets Regulating MCI Using Computational Algebraic Models Of A Life Kinetic Network</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Ndabai Sydney Chinonso</div>
+                    <div class="project-title">Matrix-driven Steganographic Techniques for Image Encryption and Decryption</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Etobro Emmanuel Imodu</div>
+                    <div class="project-title">Identifying Labelled Rooted Trees in the Full Contraction Transformation semigroup and their digraphs</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Daniel Crystal Nwabrigu</div>
+                    <div class="project-title">Switching Stomatal Aperture Dynamics through Computational Algebraic Node Control</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Daniel Jeremiah Zuboyet</div>
+                    <div class="project-title">Algebraic Modelling and Network Analysis Approaches for Simulating Agent-based Disease Dynamics in Contact Networks</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Akaighe Emmanuel Seromo</div>
+                    <div class="project-title">Algorithm for Determining Labelled Rooted Trees in the Directed Graph (Digraph) of the Identity Difference Full Transformation Semigroup</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Edeh Joshua Chinonyerem</div>
+                    <div class="project-title">Numerical Simulation of SEIR Model Of Cerebrospinal Meningitis Using Euler and Runge-Kutta methods</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Onaibre Justice Oghenerukome</div>
+                    <div class="project-title">Mathematical Modelling of Vascular Brain Tumor Growth</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Alumona Orluchukwu Kings</div>
+                    <div class="project-title">Mathematical Modelling of the Spread of Yellow Virus in Red Chili Plants through Insects</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Ukpong Precious Udofot</div>
+                    <div class="project-title">Cryptographic Technique for Enhanced Polygraphic Cipher Systems Using Matrices</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Broro Wisdom Anointing</div>
+                    <div class="project-title">Application of Matrix modelling in predicting the population growth of the Rainbow lizard (Squamata: Agamidae)</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Ojuwu Kelvin Chibuzor</div>
+                    <div class="project-title">Modeling the Effect of Disease on the Population Decline of Red Squirrels</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Valentine Tochukwu Cletus</div>
+                    <div class="project-title">A Production Inventory Model with Convex Cost, Level Dependent Demand and Few Defective Items</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Enebeli Victoria</div>
+                    <div class="project-title">Capacitated Reliable Fixed Charge Joint Inventory Location Problem with Differentiable Convex Production Cost</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Erhinure Princewill Aghogho</div>
+                    <div class="project-title">Graph Theoretic Modelling and Analysis of Prey-Predator Relationship of the Sea Otter Food Web</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Iboro Akan Marcus</div>
+                    <div class="project-title">Mathematical Modelling Of Synchronous Signalling Network Of The Activation-Induced Cell Death Of T-Cells In Leukemia Patients</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Efemini Nelson Oyibo</div>
+                    <div class="project-title">Some subgroups of the symmetric group S_5 and its Cayley digraphs</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Ogwilaya Karo Joshua</div>
+                    <div class="project-title">Time series analysis for predicting the price of crude oil in Nigeria</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Sunny Delight Elohor</div>
+                    <div class="project-title">Mathematical Modelling Of The Signal Pathway Of Abscisic Acid-Induced Stomatal Closure Of Plant As A Defense Against Abiotic Stresses</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Ogbanefe Oghenetejiri Ernest</div>
+                    <div class="project-title">Quantitative Analysis of the Random Contact Network, Agent-based Transmission and Control of Cerebrospinal Meningitis</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Nwachukwu Peace Chibuzor</div>
+                    <div class="project-title">Convergence Analysis of the Integral test</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-name">Lucky Friday Isioma</div>
+                    <div class="project-title">Simulation-Based Optimization for Enhancing the Performance of an Automated Production Line: A Case Study of Beta Glass Plc</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+    </div>
+
+    <script>
+        // Lightbox functions
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.photo-card, .course-card, .student-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Add stagger effect to cards
+        document.querySelectorAll('.courses-grid .course-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        document.querySelectorAll('.students-grid .student-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.05}s`;
+        });
+
+        // Escape key to close lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+    
+
+<footer id="contact">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://web.facebook.com/people/Clinton-Oluranran-Kayoh"><i class="fab fa-facebook-f"></i></a>
+      <a href=" https://x.com/KayohClinton?t=mo8mduk1w13YogTb0kQzeA&s=08"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/KayohClinton"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ClintonKayoh"><i class="fab fa-github"></i></a>
+      <a href="https://www.researchgate.net/publication/394704096_On_the_Time_to_Stationarity_of_Peer-Driven_Adoption_and_Event-Driven_Abandonment_of_Digital_Asset_Trends_on_Social_Networks"><i class="fab fa-researchgate"></i></a>
+      <a href="https://scholar.google.com/citations?user=tQ_u2kEAAAAJ&hl=en"><i class="fab fa-google"></i></a>
+      <a href="https://independent.academia.edu/kayohclinton"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+    <p>&copy; 2025 Clinton Oluranran Kayoh. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+<script src="scriptrest.js"></script> 
+
+</body>
+</html>
