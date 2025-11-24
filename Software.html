@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinton Oluranran Kayoh</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+        /* Animated Network Header */
+        .software-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .network-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .software-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .software-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Main Container */
+        .software-container {
+            max-width: 1500px;
+            margin: 20px auto 80px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Documentation Section */
+        .doc-section {
+            background: var(--card-bg);
+            border-radius: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .doc-section:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .doc-header {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .doc-header:hover {
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+        }
+
+        .doc-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .doc-title i {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .doc-header:hover .doc-title i {
+            transform: scale(1.2);
+        }
+
+        .doc-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255,255,255,0.7);
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .meta-item:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+        }
+
+        .meta-item i {
+            color: var(--secondary-color);
+        }
+
+        .expand-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(45, 123, 182, 0.3);
+        }
+
+        .expand-btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(45, 123, 182, 0.4);
+        }
+
+        .expand-btn.expanded {
+            transform: rotate(45deg);
+        }
+
+        .doc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: white;
+        }
+
+        .doc-content.expanded {
+            max-height: 5000px;
+        }
+
+        .doc-iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            background: white;
+        }
+
+        .source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(232, 84, 77, 0.3);
+        }
+
+        .source-link:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 84, 77, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .software-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .software-header p {
+                font-size: 1.1rem;
+            }
+
+            .doc-header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .doc-title {
+                font-size: 1.3rem;
+            }
+
+            .doc-meta {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .doc-iframe {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .software-header {
+                padding: 60px 15px 40px;
+            }
+
+            .software-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .doc-title {
+                font-size: 1.2rem;
+            }
+
+            .doc-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .doc-iframe {
+                height: 400px;
+            }
+        }
+
+        /* Animation for expandable sections */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .doc-content.expanded {
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Network node styles */
+        .network-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            box-shadow: 0 0 20px currentColor;
+            transition: all 2s ease;
+        }
+
+        .network-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform-origin: left center;
+            transition: all 2s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+ 
+</header>
+
+<!-- Theme Toggle Button -->
+<div class="theme-toggle-container">
+  <button class="theme-toggle-btn" id="themeToggleBtn">
+    <span>🎨</span>
+    <span id="currentThemeName">Default</span>
+  </button>
+  <div class="theme-menu" id="themeMenu" tabindex="0">
+    <div class="theme-option active" data-theme="default">
+      <div class="theme-color-preview" style="background: #1e3a5f;"></div>
+      <span>Default</span>
+    </div>
+    <div class="theme-option" data-theme="copper">
+      <div class="theme-color-preview" style="background: #c17d4d;"></div>
+      <span>Copper</span>
+    </div>
+    <div class="theme-option" data-theme="dark">
+      <div class="theme-color-preview" style="background: #1a1a2e;"></div>
+      <span>Dark Mode</span>
+    </div>
+    <div class="theme-option" data-theme="monochrome">
+      <div class="theme-color-preview" style="background: #ffff;"></div>
+      <span>Monochrome</span>
+    </div>
+    <div class="theme-option" data-theme="nature">
+      <div class="theme-color-preview" style="background: #2d6a4f;"></div>
+      <span>Green</span>
+    </div>
+    <div class="theme-option" data-theme="purple">
+      <div class="theme-color-preview" style="background: #6a4c93;"></div>
+      <span>Modern Purple</span>
+    </div>
+    <div class="theme-option" data-theme="gray">
+      <div class="theme-color-preview" style="background: #444;"></div>
+      <span>Gray</span>
+    </div>
+     <div class="theme-option" data-theme="red">
+      <div class="theme-color-preview" style="background: #800000;"></div>
+      <span>Red</span>
+    </div>
+     <div class="theme-option" data-theme="cyan">
+      <div class="theme-color-preview" style="background: #006064;"></div>
+      <span>Cyan</span>
+    </div>
+    <div class="theme-option" data-theme="gold">
+      <div class="theme-color-preview" style="background: #7a5901;"></div>
+      <span>Gold</span>
+    </div>
+     <div class="theme-option" data-theme="midnight">
+      <div class="theme-color-preview" style="background: #0d1b2a;"></div>
+      <span>Midnight</span>
+    </div>
+    <div class="theme-option" data-theme="brown">
+      <div class="theme-color-preview" style="background: #5c4033;"></div>
+      <span>Brown</span>
+    </div>
+     <div class="theme-option" data-theme="yellow">
+      <div class="theme-color-preview" style="background: #d4a017;"></div>
+      <span>Yellow</span>
+    </div>
+    <div class="theme-option" data-theme="orange">
+      <div class="theme-color-preview" style="background:  #ff6b35;"></div>
+      <span>Orange</span>
+    </div>
+    <div class="theme-option" data-theme="pink">
+      <div class="theme-color-preview" style="background:  #d16ba5;"></div>
+      <span>Pink</span>
+    </div>
+    <div class="theme-option" data-theme="teal">
+      <div class="theme-color-preview" style="background: #008b8b;"></div>
+      <span>Teal</span>
+    </div>
+     <div class="theme-option" data-theme="olive">
+      <div class="theme-color-preview" style="background: #708238;"></div>
+      <span>Olive</span>
+    </div>
+     <div class="theme-option" data-theme="crimson">
+      <div class="theme-color-preview" style="background:  #a4161a;"></div>
+      <span>Crimson</span>
+    </div>
+    <div class="theme-option" data-theme="amethyst">
+      <div class="theme-color-preview" style="background: #9b5de5;"></div>
+      <span>Amethyst</span>
+    </div>
+
+  </div>
+</div>
+<div><button id="textToggle" class="text-toggle">🌓 Toggle Text Color</button></div>
+
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="Research.html">Research</a>
+  <a href="Teaching.html">Teaching</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Software.html">Software</a>
+  <a href="Services.html">Services</a>
+  <a href="Awards.html">Achievements</a>
+  <a href="Resources.html">Resources</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1 class="typewriter">Clinton Oluranran Kayoh</h1>
+     <a href="index.html" class="btn">Home</a>
+      <a href="About.html" class="btn">About</a>
+    <a href="Research.html" class="btn">Research</a>
+    <a href="Teaching.html" class="btn">Teaching</a>
+     <a href="Projects.html" class="btn">Projects</a>
+    <a href="Software.html" class="btn">Software</a>
+     <a href="Services.html" class="btn">Services</a>
+     <a href="Awards.html" class="btn">Achievements</a>
+     <a href="Resources.html" class="btn">Resources</a>
+  </div>
+</section>
+
+
+
+    <!-- Animated Network Header -->
+    <header class="software-header">
+        <canvas class="network-canvas" id="networkCanvas"></canvas>
+        <div class="header-content">
+            <h1>Software Documentation</h1>
+            <p>Interactive documentation for mathematical software packages developed during my research</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="software-container">
+        <!-- Section 1: Full Transformation Semigroups -->
+        <div class="doc-section">
+            <div class="doc-header" onclick="toggleSection(1)">
+                <div class="doc-title">
+                    <i class="fas fa-project-diagram"></i>
+                    Conjugacy Classes in the Full Transformation Semigroup and Subsemigroups
+                </div>
+                <div class="doc-meta">
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>35 min read</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="far fa-calendar"></i>
+                        <span>June 14, 2025</span>
+                    </div>
+                </div>
+                <button class="expand-btn" id="expand-btn-1">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="doc-content" id="content-1">
+                <iframe class="doc-iframe" src="FULL_TRANSFORMATION.pdf" data-src="FULL_TRANSFORMATION.pdf"></iframe>
+                <div style="padding: 20px 30px;">
+                    <a href="https://github.com/ClintonKayoh/Conjclassts/tree/main/Conjclassts/Full%20Transformation%20Semigroup" class="source-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Partial Transformation Semigroups -->
+        <div class="doc-section">
+            <div class="doc-header" onclick="toggleSection(2)">
+                <div class="doc-title">
+                    <i class="fas fa-sitemap"></i>
+                    Conjugacy Classes in the Partial One to One Transformation Semigroup and Subsemigroups
+                </div>
+                <div class="doc-meta">
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>30 min read</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="far fa-calendar"></i>
+                        <span>July 05, 2025</span>
+                    </div>
+                </div>
+                <button class="expand-btn" id="expand-btn-2">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="doc-content" id="content-2">
+                <iframe class="doc-iframe" src="PARTIAL_ONE_TO_ONE_TRANSFORMATION.pdf" data-src="PARTIAL_ONE_TO_ONE_TRANSFORMATION.pdf"></iframe>
+                <div style="padding: 20px 30px;">
+                    <a href="https://github.com/ClintonKayoh/Conjclassts/tree/main/Conjclassts/Partial_one_to_one%20Transformation%20Semigroup" class="source-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Order-Preserving Transformations -->
+        <div class="doc-section">
+            <div class="doc-header" onclick="toggleSection(3)">
+                <div class="doc-title">
+                    <i class="fas fa-sort-amount-up"></i>
+                   Conjugacy Classes in the Partial Transformation Semigroup and Subsemigroups
+                </div>
+                <div class="doc-meta">
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>30 min read</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="far fa-calendar"></i>
+                        <span>July 18, 2025</span>
+                    </div>
+                </div>
+                <button class="expand-btn" id="expand-btn-3">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="doc-content" id="content-3">
+                <iframe class="doc-iframe" src="PARTIAL_TRANSFORMATION.pdf" data-src="PARTIAL_TRANSFORMATION.pdf"></iframe>
+                <div style="padding: 20px 30px;">
+                    <a href="https://github.com/ClintonKayoh/Conjclassts/tree/main/Conjclassts/Partial%20Transformation%20Semigroup" class="source-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Contraction Transformation Semigroups -->
+        <div class="doc-section">
+            <div class="doc-header" onclick="toggleSection(4)">
+                <div class="doc-title">
+                    <i class="fas fa-compress-alt"></i>
+                    Nilpotent and Idempotent Conjugacy Classes in the Full Transformation Semigroup
+                </div>
+                <div class="doc-meta">
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>30 min read</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="far fa-calendar"></i>
+                        <span>August 08, 2025</span>
+                    </div>
+                </div>
+                <button class="expand-btn" id="expand-btn-4">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="doc-content" id="content-4">
+                <iframe class="doc-iframe" src="NILPOTENT_IDEMPOTENT_FULL_TRANSFORMATION.pdf" data-src="NILPOTENT_IDEMPOTENT_FULL_TRANSFORMATION.pdf"></iframe>
+                <div style="padding: 20px 30px;">
+                    <a href="https://github.com/ClintonKayoh/Conjclassts/tree/main/Conjclassts/Full%20Transformation%20Semigroup" class="source-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Order-Decreasing Transformations -->
+        <div class="doc-section">
+            <div class="doc-header" onclick="toggleSection(5)">
+                <div class="doc-title">
+                    <i class="fas fa-sort-amount-down"></i>
+                    Nilpotent and Idempotent Conjugacy Classes in the Partial One to One Transformation Semigroup
+                </div>
+                <div class="doc-meta">
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>30 min read</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="far fa-calendar"></i>
+                        <span>August 10, 2025</span>
+                    </div>
+                </div>
+                <button class="expand-btn" id="expand-btn-5">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="doc-content" id="content-5">
+                <iframe class="doc-iframe" src="NILPOTENT_IDEMPOTENT_PARTIAL_ONE_TO_ONE_TRANSFORMATION.pdf" data-src="NILPOTENT_IDEMPOTENT_PARTIAL_ONE_TO_ONE_TRANSFORMATION.pdf"></iframe>
+                <div style="padding: 20px 30px;">
+                    <a href="https://github.com/ClintonKayoh/Conjclassts/tree/main/Conjclassts/Partial_one_to_one%20Transformation%20Semigroup" class="source-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Graph Isomorphism Methods -->
+        <div class="doc-section">
+            <div class="doc-header" onclick="toggleSection(6)">
+                <div class="doc-title">
+                    <i class="fas fa-network-wired"></i>
+                    Nilpotent and Idempotent Conjugacy Classes in the Partial Transformation Semigroup
+                </div>
+                <div class="doc-meta">
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>30 min read</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="far fa-calendar"></i>
+                        <span>August 12, 2025</span>
+                    </div>
+                </div>
+                <button class="expand-btn" id="expand-btn-6">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="doc-content" id="content-6">
+                <iframe class="doc-iframe" src="NILPOTENT_IDEMPOTENT_PARTIAL_TRANSFORMATION.pdf" data-src="NILPOTENT_IDEMPOTENT_PARTIAL_TRANSFORMATION.pdf"></iframe>
+                <div style="padding: 20px 30px;">
+                    <a href="https://github.com/ClintonKayoh/Conjclassts/tree/main/Conjclassts/Partial%20Transformation%20Semigroup" class="source-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer id="contact">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://web.facebook.com/people/Clinton-Oluranran-Kayoh"><i class="fab fa-facebook-f"></i></a>
+      <a href=" https://x.com/KayohClinton?t=mo8mduk1w13YogTb0kQzeA&s=08"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/KayohClinton"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ClintonKayoh"><i class="fab fa-github"></i></a>
+      <a href="https://www.researchgate.net/publication/394704096_On_the_Time_to_Stationarity_of_Peer-Driven_Adoption_and_Event-Driven_Abandonment_of_Digital_Asset_Trends_on_Social_Networks"><i class="fab fa-researchgate"></i></a>
+      <a href="https://scholar.google.com/citations?user=tQ_u2kEAAAAJ&hl=en"><i class="fab fa-google"></i></a>
+      <a href="https://independent.academia.edu/kayohclinton"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+    <p>&copy; 2025 Clinton Oluranran Kayoh. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+        // Network Animation
+        class NetworkAnimation {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.nodes = [];
+                this.connections = [];
+                this.colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff'];
+                this.nodeLabels = ['Tₙ', 'PTₙ', 'OPₙ', 'Cₙ', 'ODₙ', 'CCₙ', 'ISO'];
+                
+                this.init();
+                this.animate();
+                window.addEventListener('resize', () => this.init());
+            }
+
+            init() {
+                this.canvas.width = this.canvas.offsetWidth;
+                this.canvas.height = this.canvas.offsetHeight;
+                
+                this.nodes = [];
+                this.connections = [];
+                
+                // Create nodes
+                for (let i = 0; i < 25; i++) {
+                    this.nodes.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 4 + 3,
+                        color: this.colors[Math.floor(Math.random() * this.colors.length)],
+                        label: this.nodeLabels[Math.floor(Math.random() * this.nodeLabels.length)],
+                        pulse: Math.random() * Math.PI * 2
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                // Update and draw connections
+                this.connections = [];
+                for (let i = 0; i < this.nodes.length; i++) {
+                    for (let j = i + 1; j < this.nodes.length; j++) {
+                        const dx = this.nodes[i].x - this.nodes[j].x;
+                        const dy = this.nodes[i].y - this.nodes[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            const opacity = 1 - distance / 150;
+                            this.ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.3})`;
+                            this.ctx.lineWidth = 1;
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(this.nodes[i].x, this.nodes[i].y);
+                            this.ctx.lineTo(this.nodes[j].x, this.nodes[j].y);
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+                
+                // Update and draw nodes
+                this.nodes.forEach(node => {
+                    // Update position
+                    node.x += node.vx;
+                    node.y += node.vy;
+                    
+                    // Bounce off walls
+                    if (node.x < 0 || node.x > this.canvas.width) node.vx *= -1;
+                    if (node.y < 0 || node.y > this.canvas.height) node.vy *= -1;
+                    
+                    // Keep within bounds
+                    node.x = Math.max(10, Math.min(this.canvas.width - 10, node.x));
+                    node.y = Math.max(10, Math.min(this.canvas.height - 10, node.y));
+                    
+                    // Update pulse
+                    node.pulse += 0.05;
+                    
+                    // Draw node with glow effect
+                    const glow = Math.sin(node.pulse) * 3 + 5;
+                    
+                    // Outer glow
+                    const gradient = this.ctx.createRadialGradient(
+                        node.x, node.y, 0,
+                        node.x, node.y, node.radius + glow
+                    );
+                    gradient.addColorStop(0, node.color + 'aa');
+                    gradient.addColorStop(1, node.color + '00');
+                    
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.beginPath();
+                    this.ctx.arc(node.x, node.y, node.radius + glow, 0, Math.PI * 2);
+                    this.ctx.fill();
+                    
+                    // Node core
+                    this.ctx.fillStyle = node.color;
+                    this.ctx.beginPath();
+                    this.ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    this.ctx.fill();
+                    
+                    // Node label
+                    this.ctx.fillStyle = 'white';
+                    this.ctx.font = '10px Arial';
+                    this.ctx.textAlign = 'center';
+                    this.ctx.textBaseline = 'middle';
+                    this.ctx.fillText(node.label, node.x, node.y);
+                });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize network animation
+        const canvas = document.getElementById('networkCanvas');
+        const network = new NetworkAnimation(canvas);
+
+        // Toggle section expansion
+        function toggleSection(sectionNumber) {
+            const content = document.getElementById(`content-${sectionNumber}`);
+            const button = document.getElementById(`expand-btn-${sectionNumber}`);
+            
+            // Toggle expanded class
+            content.classList.toggle('expanded');
+            button.classList.toggle('expanded');
+            
+            // Change icon
+            const icon = button.querySelector('i');
+            if (content.classList.contains('expanded')) {
+                icon.className = 'fas fa-minus';
+                loadPDFContent(sectionNumber);
+            } else {
+                icon.className = 'fas fa-plus';
+            }
+        }
+
+        // Simulate PDF loading
+        function loadPDFContent(sectionNumber) {
+            const iframe = document.querySelector(`#content-${sectionNumber} .doc-iframe`);
+            if (iframe.contentDocument) {
+                iframe.contentDocument.body.innerHTML = `
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; font-family: Arial, sans-serif; color: #333;">
+                        <i class="fas fa-file-pdf" style="font-size: 4rem; color: #e74c3c; margin-bottom: 20px;"></i>
+                        <h2>Documentation Preview</h2>
+                        <p style="text-align: center; max-width: 400px; margin: 20px 0;">
+                            This would display the actual LaTeX-generated PDF documentation for the software package.
+                            The document includes mathematical definitions, algorithm descriptions, and usage examples.
+                        </p>
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; max-width: 500px;">
+                            <h3>Document Features:</h3>
+                            <ul style="text-align: left; margin: 15px 0;">
+                                <li>Mathematical background and definitions</li>
+                                <li>Complete API documentation</li>
+                                <li>Algorithm descriptions and complexity analysis</li>
+                                <li>Usage examples and code snippets</li>
+                                <li>Theoretical foundations and theorems</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Close other sections when one is opened
+        document.querySelectorAll('.doc-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const currentSection = this.parentElement;
+                document.querySelectorAll('.doc-section').forEach(section => {
+                    if (section !== currentSection && section.querySelector('.doc-content').classList.contains('expanded')) {
+                        const sectionNum = Array.from(section.parentElement.children).indexOf(section) + 1;
+                        toggleSection(sectionNum);
+                    }
+                });
+            });
+        });
+
+        // Add keyboard accessibility
+        document.querySelectorAll('.doc-header').forEach(header => {
+            header.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+            header.setAttribute('tabindex', '0');
+        });
+    </script>
+
+
+<script src="scriptrest.js"></script> 
+
+</body>
+</html>

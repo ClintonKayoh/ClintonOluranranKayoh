@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinton Oluranran Kayoh</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+ 
+</header>
+
+<!-- Theme Toggle Button -->
+<div class="theme-toggle-container">
+  <button class="theme-toggle-btn" id="themeToggleBtn">
+    <span>🎨</span>
+    <span id="currentThemeName">Default</span>
+  </button>
+  <div class="theme-menu" id="themeMenu" tabindex="0">
+    <div class="theme-option active" data-theme="default">
+      <div class="theme-color-preview" style="background: #1e3a5f;"></div>
+      <span>Default</span>
+    </div>
+    <div class="theme-option" data-theme="copper">
+      <div class="theme-color-preview" style="background: #c17d4d;"></div>
+      <span>Copper</span>
+    </div>
+    <div class="theme-option" data-theme="dark">
+      <div class="theme-color-preview" style="background: #1a1a2e;"></div>
+      <span>Dark Mode</span>
+    </div>
+    <div class="theme-option" data-theme="monochrome">
+      <div class="theme-color-preview" style="background: #ffff;"></div>
+      <span>Monochrome</span>
+    </div>
+    <div class="theme-option" data-theme="nature">
+      <div class="theme-color-preview" style="background: #2d6a4f;"></div>
+      <span>Green</span>
+    </div>
+    <div class="theme-option" data-theme="purple">
+      <div class="theme-color-preview" style="background: #6a4c93;"></div>
+      <span>Modern Purple</span>
+    </div>
+    <div class="theme-option" data-theme="gray">
+      <div class="theme-color-preview" style="background: #444;"></div>
+      <span>Gray</span>
+    </div>
+     <div class="theme-option" data-theme="red">
+      <div class="theme-color-preview" style="background: #800000;"></div>
+      <span>Red</span>
+    </div>
+     <div class="theme-option" data-theme="cyan">
+      <div class="theme-color-preview" style="background: #006064;"></div>
+      <span>Cyan</span>
+    </div>
+    <div class="theme-option" data-theme="gold">
+      <div class="theme-color-preview" style="background: #7a5901;"></div>
+      <span>Gold</span>
+    </div>
+     <div class="theme-option" data-theme="midnight">
+      <div class="theme-color-preview" style="background: #0d1b2a;"></div>
+      <span>Midnight</span>
+    </div>
+    <div class="theme-option" data-theme="brown">
+      <div class="theme-color-preview" style="background: #5c4033;"></div>
+      <span>Brown</span>
+    </div>
+     <div class="theme-option" data-theme="yellow">
+      <div class="theme-color-preview" style="background: #d4a017;"></div>
+      <span>Yellow</span>
+    </div>
+    <div class="theme-option" data-theme="orange">
+      <div class="theme-color-preview" style="background:  #ff6b35;"></div>
+      <span>Orange</span>
+    </div>
+    <div class="theme-option" data-theme="pink">
+      <div class="theme-color-preview" style="background:  #d16ba5;"></div>
+      <span>Pink</span>
+    </div>
+    <div class="theme-option" data-theme="teal">
+      <div class="theme-color-preview" style="background: #008b8b;"></div>
+      <span>Teal</span>
+    </div>
+     <div class="theme-option" data-theme="olive">
+      <div class="theme-color-preview" style="background: #708238;"></div>
+      <span>Olive</span>
+    </div>
+     <div class="theme-option" data-theme="crimson">
+      <div class="theme-color-preview" style="background:  #a4161a;"></div>
+      <span>Crimson</span>
+    </div>
+    <div class="theme-option" data-theme="amethyst">
+      <div class="theme-color-preview" style="background: #9b5de5;"></div>
+      <span>Amethyst</span>
+    </div>
+
+  </div>
+</div>
+<div><button id="textToggle" class="text-toggle">🌓 Toggle Text Color</button></div>
+
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="Research.html">Research</a>
+  <a href="Teaching.html">Teaching</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Software.html">Software</a>
+  <a href="Services.html">Services</a>
+  <a href="Awards.html">Achievements</a>
+  <a href="Resources.html">Resources</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1 class="typewriter">Clinton Oluranran Kayoh</h1>
+     <a href="index.html" class="btn">Home</a>
+      <a href="About.html" class="btn">About</a>
+    <a href="Research.html" class="btn">Research</a>
+    <a href="Teaching.html" class="btn">Teaching</a>
+     <a href="Projects.html" class="btn">Projects</a>
+    <a href="Software.html" class="btn">Software</a>
+     <a href="Services.html" class="btn">Services</a>
+     <a href="Awards.html" class="btn">Achievements</a>
+     <a href="Resources.html" class="btn">Resources</a>
+  </div>
+</section>
+
+ <!-- Welcome Hero Section -->
+    <div class="welcome-hero">
+        <div class="welcome-content">
+            <h1>Services & Community Outreach</h1>
+            <p class="welcome-subtitle">Building Bridges Through Mathematics</p>
+            <p class="welcome-description">
+                Discover how I'm working to make mathematics accessible, engaging, and culturally relevant from classrooms to riverine communities, from ancient divination systems to modern neural networks. Every initiative is driven by a simple belief: mathematics belongs to everyone.
+            </p>
+        </div>
+        <div class="scroll-indicator" onclick="document.querySelector('.main-container').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Service 1: Presidential Leadership -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h2 class="service-title">President of the Mathematical Association</h2>
+            </div>
+            <div class="service-content">
+                <p>I had the privilege of serving as <strong>President of the Mathematical Association</strong>, a role that provided a platform to significantly enhance the academic and social environment for the entire mathematical community. My primary achievement was fostering a <strong>collaborative learning environment</strong> that actively bridged the communication and engagement gap between students, faculty, and the broader community.</p>
+                <p>This involved organizing regular seminars, leading student-faculty mixers, and initiating peer-led study groups that increased engagement in challenging upper-division courses. The tenure was focused on institutionalizing support structures, ensuring that the association functioned not just as a club, but as a central hub for mathematical scholarship and professional networking.</p>
+                <div class="category-badges">
+                    <span class="badge">Leadership</span>
+                    <span class="badge">Community Building</span>
+                    <span class="badge">Academic Excellence</span>
+                    <span class="badge">Networking</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2: Undergraduate Research Mentorship -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2 class="service-title">Undergraduate Research Mentorship Program (DiscoverU)</h2>
+            </div>
+            <div class="service-content">
+                <p>My dedication to capacity building led to the creation of a program that <strong>connects undergraduate researchers with experienced graduate students in their fields of interest</strong>. Recognizing the steep learning curve and lack of formal guidance often faced by undergraduates entering research, I designed this initiative to provide targeted, specialized mentorship.</p>
+                <p>This program has been pivotal in creating a sustainable research pipeline, significantly increasing the number of undergraduates who successfully complete and present their first research projects.</p>
+                <div class="highlight-box">
+                    <h4>Program Impact</h4>
+                    <p>Graduate students act as technical advisors and role models, assisting with everything from literature review and methodology design to code development and conference presentation preparation.</p>
+                </div>
+                
+                <div class="impact-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Students Mentored</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Research Projects</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Conference Presentations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3: Math Escape Room -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <h2 class="service-title">FUPRE Math Escape Room</h2>
+            </div>
+            <div class="service-content">
+                <p>To enhance student engagement in mathematical problem-solving, I created the <strong>FUPRE Math Escape Room</strong>. This project was conceived as an innovative, low-stakes environment where students could apply complex mathematical concepts ranging from linear algebra and differential equations to logic and cryptography in a fun, gamified setting.</p>
+                <p>The core objective was to dismantle the perception of mathematics as purely abstract and demonstrate its real-world application through puzzles and challenges. The Escape Room became an immensely popular annual event, boosting collaborative skills, critical thinking, and a deeper appreciation for the practical utility of mathematical theory.</p>
+                 <div class="category-badges">
+                    <span class="badge">Gamification</span>
+                    <span class="badge">Problem-Solving</span>
+                    <span class="badge">Collaboration</span>
+                    <span class="badge">Critical Thinking</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4: Math Career Fair -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2 class="service-title">FUPRE Math Career Fair</h2>
+            </div>
+            <div class="service-content">
+                <p>Recognizing the challenges undergraduate students face in translating their math degrees into career opportunities, I formed the <strong>FUPRE Math Career Fair</strong>. The goal was simple but essential: to prepare undergraduates for the transition into the labor market for math-related jobs.</p>
+                
+                <p>I brought together alumni, industry professionals, and recruiters from diverse sectors (finance, technology, data science) to conduct workshops on technical interviewing, portfolio building, and salary negotiation. This initiative not only provided students with essential professional development but also highlighted the vast, often unseen, career paths available to mathematically trained graduates.</p>
+                
+                <div class="highlight-box">
+                    <h4>Career Pathways Explored</h4>
+                    <p>Finance • Technology • Data Science • Research • Academia • Consulting • Cryptography</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 5: Tutoring & Bootcamps -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h2 class="service-title">Comprehensive Tutoring & Software Bootcamps (FUPRE STEM Center)</h2>
+            </div>
+            <div class="service-content">
+                <p>My commitment to accessibility is demonstrated through extensive, <strong>free tutoring for undergraduate mathematics courses and personal mentorship</strong>. This was coupled with the organization of crucial <strong>bootcamps on mathematical software and programming languages</strong>.</p>
+                <p>These intensive, hands-on workshops covered powerful technical tools, alongside essential programming languages and technical writing. By making this advanced training freely available, I equipped hundreds of students with the computational and communication skills necessary to succeed in modern mathematical research and professional roles.</p>
+                
+                <div class="category-badges">
+                    <span class="badge">SageMath</span>
+                    <span class="badge">GAP</span>
+                    <span class="badge">Maxima</span>
+                    <span class="badge">Maple</span>
+                    <span class="badge">MATLAB</span>
+                    <span class="badge">Mathematica</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">R</span>
+                    <span class="badge">LaTeX</span>
+                </div>
+
+                <div class="impact-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Students Taught</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Bootcamps Organized</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Free Access</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 6: Graduate Student Instruction -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2 class="service-title">Graduate Student Technical Instruction</h2>
+            </div>
+            <div class="service-content">
+                <p>Extending technical education to the highest level, I have had the privilege of <strong>teaching graduate students to code in Python, LaTeX, and Matlab</strong>. This instruction was often tailored to meet the immediate needs of advanced research, helping students apply sophisticated coding principles to simulate models, process large datasets, and critically write their dissertations and papers using professional-grade technical documentation.</p>
+                
+                <p>This direct instruction accelerated the research timelines of numerous graduate students, enhancing the quality and presentation of their scholarly work.</p>
+            </div>
+        </div>
+
+        <!-- Service 7: Rural School Initiative -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <h2 class="service-title">Addressing Educational Deficits in Rural Schools</h2>
+            </div>
+            <div class="service-content">
+                <p>Recognizing the severe national shortage of math educators in rural schools, I spearheaded an initiative to mobilize fellow corps members to deliver supplementary instruction. This was a critical intervention aimed at students facing a fundamental deficit of qualified teachers.</p>
+                <p>This program acted as an essential safety net, providing continuity of instruction and measurable improvements in core mathematical competency where local resources were most strained.</p>
+                <div class="highlight-box">
+                    <h4>Community Impact</h4>
+                    <p>Our effort ensured that students in underserved communities received quality mathematics teaching at least twice weekly, supplementing their standard curriculum.</p>
+                </div>
+                
+                <div class="impact-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">2x</div>
+                        <div class="stat-label">Weekly Sessions</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Communities Served</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">88%</div>
+                        <div class="stat-label">Performance Increase</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 8: Riverine Communities -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h2 class="service-title">Bringing Math to Riverine Communities</h2>
+            </div>
+            <div class="service-content">
+                <p>This work led to my most innovative outreach initiative: creating a teaching program that literally brings mathematical concepts to children in riverine communities across the Niger Delta. Recognizing that traditional classroom models fail these communities during school holidays, we use a mobile, seasonal approach.</p>
+                <p>By connecting abstract mathematical ideas to the world these children know intimately; the rise and fall of the water, we foster a culturally relevant, unforgettable learning experience that demystifies mathematics and demonstrates its presence in their daily lives.</p>
+                <div class="highlight-box">
+                    <h4>Innovative Pedagogy</h4>
+                    <p>The curriculum uniquely teaches <strong>modular arithmetic using the natural rhythms of tidal patterns in the sea and rivers</strong>.</p>
+                </div>
+                <div class="category-badges">
+                    <span class="badge">Cultural Relevance</span>
+                    <span class="badge">Modular Arithmetic</span>
+                    <span class="badge">Environmental Learning</span>
+                    <span class="badge">Community Engagement</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 9: Ethno-mathematics Research -->
+        <div class="service-section">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2 class="service-title">Ethno-mathematics Research: Ife Divination System</h2>
+            </div>
+            <div class="service-content">
+                <p>This dedicated community work has inspired a critical research initiative that explores the <strong>Ife divination system</strong>, an ancient Niger Delta practice based on zeros and ones that fundamentally <strong>predates George Boole's formalization of Boolean algebra</strong>. Through rigorous mathematical conversion, I'm translating this complex, cultural system into modern Boolean algebra and finite field frameworks.</p>
+                <p>By analyzing the Ife system's underlying patterns, I am discovering new structures and efficiency principles with tangible applications in modern computational science. This project is a powerful synthesis of cultural preservation, abstract mathematics, and cutting-edge technology.</p>
+                <div class="highlight-box">
+                    <h4>Dual Impact</h4>
+                    <p><strong>First:</strong> Contributing to ethno-mathematics by preserving and demonstrating how African intellectual traditions engaged with concepts foundational to computer science centuries ago.</p>
+                    <p><strong>Second:</strong> Opening new avenues in coding theory and demonstrating relevance to binary neural networks in machine learning.</p>
+                </div>
+                <div class="category-badges">
+                    <span class="badge">Ethno-mathematics</span>
+                    <span class="badge">Boolean Algebra</span>
+                    <span class="badge">Machine Learning</span>
+                    <span class="badge">Cultural Preservation</span>
+                    <span class="badge">Binary Neural Networks</span>
+                    <span class="badge">Coding Theory</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up" style="position: relative; left: 80%; transform: translate(-80%);"></i>
+    </button>
+
+    <script>
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.service-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+
+<footer id="contact">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://web.facebook.com/people/Clinton-Oluranran-Kayoh"><i class="fab fa-facebook-f"></i></a>
+      <a href=" https://x.com/KayohClinton?t=mo8mduk1w13YogTb0kQzeA&s=08"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/KayohClinton"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ClintonKayoh"><i class="fab fa-github"></i></a>
+      <a href="https://www.researchgate.net/publication/394704096_On_the_Time_to_Stationarity_of_Peer-Driven_Adoption_and_Event-Driven_Abandonment_of_Digital_Asset_Trends_on_Social_Networks"><i class="fab fa-researchgate"></i></a>
+      <a href="https://scholar.google.com/citations?user=tQ_u2kEAAAAJ&hl=en"><i class="fab fa-google"></i></a>
+      <a href="https://independent.academia.edu/kayohclinton"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+    <p>&copy; 2025 Clinton Oluranran Kayoh. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script src="scriptrest.js"></script> 
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinton Oluranran Kayoh</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+ 
+</header>
+
+<!-- Theme Toggle Button -->
+<div class="theme-toggle-container">
+  <button class="theme-toggle-btn" id="themeToggleBtn">
+    <span>🎨</span>
+    <span id="currentThemeName">Default</span>
+  </button>
+  <div class="theme-menu" id="themeMenu" tabindex="0">
+    <div class="theme-option active" data-theme="default">
+      <div class="theme-color-preview" style="background: #1e3a5f;"></div>
+      <span>Default</span>
+    </div>
+    <div class="theme-option" data-theme="copper">
+      <div class="theme-color-preview" style="background: #c17d4d;"></div>
+      <span>Copper</span>
+    </div>
+    <div class="theme-option" data-theme="dark">
+      <div class="theme-color-preview" style="background: #1a1a2e;"></div>
+      <span>Dark Mode</span>
+    </div>
+    <div class="theme-option" data-theme="monochrome">
+      <div class="theme-color-preview" style="background: #ffff;"></div>
+      <span>Monochrome</span>
+    </div>
+    <div class="theme-option" data-theme="nature">
+      <div class="theme-color-preview" style="background: #2d6a4f;"></div>
+      <span>Green</span>
+    </div>
+    <div class="theme-option" data-theme="purple">
+      <div class="theme-color-preview" style="background: #6a4c93;"></div>
+      <span>Modern Purple</span>
+    </div>
+    <div class="theme-option" data-theme="gray">
+      <div class="theme-color-preview" style="background: #444;"></div>
+      <span>Gray</span>
+    </div>
+     <div class="theme-option" data-theme="red">
+      <div class="theme-color-preview" style="background: #800000;"></div>
+      <span>Red</span>
+    </div>
+     <div class="theme-option" data-theme="cyan">
+      <div class="theme-color-preview" style="background: #006064;"></div>
+      <span>Cyan</span>
+    </div>
+    <div class="theme-option" data-theme="gold">
+      <div class="theme-color-preview" style="background: #7a5901;"></div>
+      <span>Gold</span>
+    </div>
+     <div class="theme-option" data-theme="midnight">
+      <div class="theme-color-preview" style="background: #0d1b2a;"></div>
+      <span>Midnight</span>
+    </div>
+    <div class="theme-option" data-theme="brown">
+      <div class="theme-color-preview" style="background: #5c4033;"></div>
+      <span>Brown</span>
+    </div>
+     <div class="theme-option" data-theme="yellow">
+      <div class="theme-color-preview" style="background: #d4a017;"></div>
+      <span>Yellow</span>
+    </div>
+    <div class="theme-option" data-theme="orange">
+      <div class="theme-color-preview" style="background:  #ff6b35;"></div>
+      <span>Orange</span>
+    </div>
+    <div class="theme-option" data-theme="pink">
+      <div class="theme-color-preview" style="background:  #d16ba5;"></div>
+      <span>Pink</span>
+    </div>
+    <div class="theme-option" data-theme="teal">
+      <div class="theme-color-preview" style="background: #008b8b;"></div>
+      <span>Teal</span>
+    </div>
+     <div class="theme-option" data-theme="olive">
+      <div class="theme-color-preview" style="background: #708238;"></div>
+      <span>Olive</span>
+    </div>
+     <div class="theme-option" data-theme="crimson">
+      <div class="theme-color-preview" style="background:  #a4161a;"></div>
+      <span>Crimson</span>
+    </div>
+    <div class="theme-option" data-theme="amethyst">
+      <div class="theme-color-preview" style="background: #9b5de5;"></div>
+      <span>Amethyst</span>
+    </div>
+
+  </div>
+</div>
+<div><button id="textToggle" class="text-toggle">🌓 Toggle Text Color</button></div>
+
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="Research.html">Research</a>
+  <a href="Teaching.html">Teaching</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Software.html">Software</a>
+  <a href="Services.html">Services</a>
+  <a href="Awards.html">Achievements</a>
+  <a href="Resources.html">Resources</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1 class="typewriter">Clinton Oluranran Kayoh</h1>
+     <a href="index.html" class="btn">Home</a>
+      <a href="About.html" class="btn">About</a>
+    <a href="Research.html" class="btn">Research</a>
+    <a href="Teaching.html" class="btn">Teaching</a>
+     <a href="Projects.html" class="btn">Projects</a>
+    <a href="Software.html" class="btn">Software</a>
+     <a href="Services.html" class="btn">Services</a>
+    <a href="Awards.html" class="btn">Achievements</a>
+     <a href="Resources.html" class="btn">Resources</a>
+  </div>
+</section>
+
+    <section class="hero-welcome">
+        <div class="hero-container">
+            <!-- Text Section with Typing Effect -->
+            <div class="hero-text">
+                <h1>Glad you're here!</h1>
+                <div class="typing-text" id="typingText">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <div class="hero-cta">
+                    <a href="About.html#about" class="btn">Read More</a>
+                    <a href="Research.html" class="btn">Explore Research</a>
+                    <a href="About.html#contact" class="btn">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Section -->
+            <div class="hero-image">
+                <img src="Kayoh1.jpeg" alt="Academic Profile">
+            </div>
+        </div>
+    </section>
+
+    <section id="news-events">
+        <h2>News & Events</h2>
+
+        <!-- Ongoing Research 3: Malaria Gene Regulation Network -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">ONGOING COLLABORATIVE RESEARCH</span>
+                <h3>Gene Regulation Network of Malaria Resistance in Human Population: Investigating Artemisinin resistance in Malaria Parasites transmitted by Anopheles Stephensi</h3>
+                <p class="news-date">In Progress</p>
+                <p class="event-location">Collaboration with Ugbene Lab</p>
+                <p class="news-description">
+                    A critical investigation into the gene regulatory mechanisms of Malaria in humans caused by the invasive Anopheles stephensi mosquito species, focusing on understanding the molecular basis of artemisinin resistance in newly emerging malaria strains.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>Research Focus:</h4>
+                    <ul>
+                        <li>Gene regulation network construction and analysis</li>
+                        <li>Identification of resistance genes and pathways</li>
+                        <li>Molecular mechanisms of artemisinin resistance</li>
+                        <li>Comparative genomics with susceptible human populations</li>
+                        <li>Network-based biomarker discovery</li>
+                        <li>Computational modeling of drug resistance evolution</li>
+                        <li>Potential therapeutic intervention targets</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">
+                        <strong>Collaborators:</strong> Ebimapogba Ebaifiyegha Anthony, Clinton Oluranran Kayoh and the Ugbene Lab
+                    </p>
+                </div>
+                
+                <a href="#malaria-research" class="news-link">View Progress</a>
+                <a href="#contact-collab" class="news-link" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); margin-left: 10px;">Contact Team</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="Anopheles.jpeg" alt="Malaria Research">
+            </div>
+        </div>
+
+         <!-- Ongoing Project: NuMeRaTE Python Package -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">ONGOING PROJECT DEVELOPMENT</span>
+                <h3>Conjclassts: Python Package for Enumeration of  Conjugacy classes in Transformation Semigroup </h3>
+                <p class="news-date">In Development</p>
+                <p class="event-location">Software Development Project (Builder: Clinton Oluranran Kayoh)</p>
+                <p class="news-description">
+                    Developing a comprehensive Python package designed to facilitate advanced computational analysis of transformation semigroups and their algebraic properties. Conjclassts aims to become an essential tool for researchers in algebraic combinatorics and computational algebra.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>Package Features:</h4>
+                    <ul>
+                        <li>Enumeration of Conjugacy classes in transformation semigroups</li>
+                        <li>Sub-semigroup identification and classification</li>
+                        <li>Conjugacy class computation and analysis</li>
+                        <li>Nilpotency detection for semigroups and conjugacy classes</li>
+                        <li>Idempotency analysis for semigroups and their conjugacy classes</li>
+                        <li>Efficient algorithms for large-scale computations</li>
+                        <li>User-friendly API for mathematical research applications</li>
+                    </ul>
+                </div>
+                
+                <a href="#numerate-docs" class="news-link">Documentation</a>
+                <a href="#github-numerate" class="news-link" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); margin-left: 10px;">GitHub Repository</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="Python.webp" alt="Python Programming">
+            </div>
+        </div>
+        
+
+         <!-- Ongoing Research 1: Transformation Semigroups -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">ONGOING COLLABORATIVE RESEARCH</span>
+                <h3>Non-Starlike and Quasi-Starlike Transformation Semigroups</h3>
+                <p class="news-date">In Progress</p>
+                <p class="event-location">Collaboration with Ugbene Lab</p>
+                <p class="news-description">
+                    An in-depth investigation into the algebraic and combinatorial properties of transformation semigroups, exploring their structural characteristics, graphical representations, and various subsemigroup classifications.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>Research Focus:</h4>
+                    <ul>
+                        <li>Algebraic properties of non-starlike and quasi-starlike transformation semigroups</li>
+                        <li>Combinatorial properties and enumeration techniques</li>
+                        <li>Digraph representations and visualization methods</li>
+                        <li>Conjugacy class analysis and classification</li>
+                        <li>Subsemigroups: order preserving, contraction, order decreasing</li>
+                        <li>Order preserving or reversing transformation properties</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">
+                        <strong>Collaborators:</strong> Rhoda Osanakpa, Clinton Kayoh, Salami Matthew, Emunefe Friday, and the Ugbene Lab
+                    </p>
+                </div>
+                
+                <a href="#semigroup-research" class="news-link">View Progress</a>
+                <a href="#contact-collab" class="news-link" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); margin-left: 10px;">Contact Team</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="Semigroup.png" alt="Abstract Algebra Research">
+            </div>
+        </div>
+
+
+        <!-- Conference Presentation: ICASEM 2025 -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">UPCOMING CONFERENCE PRESENTATION</span>
+                <h3>ICASEM-2025: Modeling Kelp Forest Trophic Structure</h3>
+                <p class="news-date">October 13-17, 2025</p>
+                <p class="event-location">Namibia University of Science and Technology</p>
+                <p class="news-description">
+                    Presenting groundbreaking research at the International Conference on Applied Science, Engineering and Management (ICASEM-2025), exploring the application of algebraic and statistical methods to understand complex ecological networks in kelp forest ecosystems.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>Paper Details:</h4>
+                    <ul>
+                        <li><strong>Title:</strong> Modeling Kelp Forest Trophic Structure: An Algebraic Statistical Analysis of Species Interactions and Network Controls</li>
+                        <li><strong>Authors:</strong> Ifeanyichukwu Ugbene and Clinton Kayoh</li>
+                        <li>Algebraic modeling of trophic relationships</li>
+                        <li>Statistical analysis of species interactions</li>
+                        <li>Network control mechanisms in marine ecosystems</li>
+                        <li>Applications to conservation and ecosystem management</li>
+                    </ul>
+                </div>
+                
+                <a href="#icasem-abstract" class="news-link">View Abstract</a>
+                <a href="#icasem-conference" class="news-link" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); margin-left: 10px;">Conference Website</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="ICASEM.png" alt="Kelp Forest Ecosystem">
+            </div>
+        </div>
+
+       
+        <!-- Ongoing Research 2: Markov Chains Mixing Time -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">ONGOING COLLABORATIVE RESEARCH</span>
+                <h3>Mixing Time of Markov Chains on Graphs and Network Structures</h3>
+                <p class="news-date">In Progress</p>
+                <p class="event-location">Collaboration with Ugbene Lab</p>
+                <p class="news-description">
+                    Investigating the mixing time behavior of Markov chains across various graph topologies and network architectures, with emphasis on practical applications in computational systems, social networks, and biological processes.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>Research Focus:</h4>
+                    <ul>
+                        <li>Mixing time analysis for different graph structures (regular, random, scale-free)</li>
+                        <li>Network topology impact on convergence rates</li>
+                        <li>Spectral methods and eigenvalue approaches</li>
+                        <li>Applications in random walks and diffusion processes</li>
+                        <li>Real-world implementations in communication networks</li>
+                        <li>Computational algorithms for mixing time estimation</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">
+                        <strong>Collaborators:</strong> Elohor Imelda Agbedo, Clinton Oluranran Kayoh and the Ugbene Lab
+                    </p>
+                </div>
+                
+                <a href="#markov-research" class="news-link">View Progress</a>
+                <a href="#contact-collab" class="news-link" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); margin-left: 10px;">Contact Team</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="Markov.jpg" alt="Network Analysis">
+            </div>
+        </div>
+
+        <!-- Research Talk: Pancreatic Cancer Gene Network -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">RESEARCH TALK</span>
+                <h3>Creating a 160-Gene Network for Understanding Pancreatic Cancer</h3>
+                <p class="news-date">Date: August 15th, 2025</p>
+                <p class="event-location">Venue: Online via Zoom (Organized in conjunction with Members of the Ugbene Lab)</p>
+                <p class="news-description">
+                    A groundbreaking research presentation exploring the construction and analysis of a comprehensive 160-gene regulatory network aimed at unraveling the molecular mechanisms underlying pancreatic cancer. This talk bridges mathematical biology, network science, and oncology research.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>Discussion Points:</h4>
+                    <ul>
+                        <li>Network construction methodology and data integration techniques</li>
+                        <li>Gene interaction patterns and regulatory pathway identification</li>
+                        <li>Mathematical modeling approaches for biological networks</li>
+                        <li>Applications of graph theory in cancer research</li>
+                        <li>Potential therapeutic targets identified through network analysis</li>
+                        <li>Computational tools for systems biology and cancer genomics</li>
+                    </ul>
+                </div>
+                
+                <a href="#talk-details" class="news-link">View Abstract</a>
+                <a href="#rsvp" class="news-link" style="background: linear-gradient(135deg, var(--primary-color) 0%,var(--secondary-color) 100%); margin-left: 10px;">RSVP</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="pancreas-man-3d.jpg" alt="Gene Network Visualization">
+            </div>
+        </div>
+
+         <!-- Award: i-Scholar Initiative 2025 -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">AWARD & RECOGNITION</span>
+                <h3>Awardee of i-Scholar Initiative 2025</h3>
+                <p class="news-date">June 15, 2025</p>
+                <p class="event-location">i-Scholar Initiative (iSI)</p>
+                <p class="news-description">
+                    Honored to be selected as an awardee of the prestigious i-Scholar Initiative 2025, a competitive program that identifies and prepares exceptional, self-driven young African scholars for advanced graduate-level opportunities in select countries worldwide.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>About the i-Scholar Initiative:</h4>
+                    <ul>
+                        <li>Non-profit organization dedicated to identifying deserving, self-driven students</li>
+                        <li>Prepares young African scholars for advanced/graduate level opportunities</li>
+                        <li>Governed by exceptional and accomplished leaders serving pro bono</li>
+                        <li>Mission to give back to the community and empower future leaders</li>
+                        <li>Provides platforms for volunteers to impact the younger generation</li>
+                        <li>Transforms scholars into change agents for their communities</li>
+                        <li>Creates pathways to international academic opportunities</li>
+                    </ul>
+                </div>
+                
+                <a href="#ischolar-profile" class="news-link">View Profile</a>
+                <a href="https://ischolarinitiative.org" class="news-link" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); margin-left: 10px;" target="_blank">Learn About iSI</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="iScholar.jpeg" alt="Academic Achievement">
+            </div>
+        </div>
+        
+
+         <!-- FUPRE SageMath Days 2025 -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge">UPCOMING EVENT</span>
+                <h3>FUPRE SageMath Days 2025</h3>
+                <p class="news-date">Date: April 6-9, 2025</p>
+                <p class="event-location">Organized in Conjunction with Kaybernetics Lab, FUPRE</p>
+                <p class="news-description">
+                    An exciting workshop focused on leveraging SageMath, a powerful open-source mathematics software system, to solve complex problems across multiple mathematical domains. Learn from experts and gain practical skills in computational mathematics.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>Abstract Algebra: Group theory, rings, fields, and algebraic structures</li>
+                        <li>Graph Theory: Network analysis, graph algorithms, and visualization</li>
+                        <li>Combinatorics: Counting techniques, generating functions, and discrete structures</li>
+                        <li>Number Theory: Prime numbers, modular arithmetic, and cryptographic applications</li>
+                        <li>Computational problem-solving with SageMath's powerful toolkit</li>
+                    </ul>
+                </div>
+                
+                <a href="#register-sagemath" class="news-link">Register Interest</a>
+                <a href="#sagemath-details" class="news-link" style="background: linear-gradient(135deg,var(--primary-color) 0%, var(--secondary-color) 100%); margin-left: 10px;">Event Details</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="Sagemath.png" alt="SageMath Workshop">
+            </div>
+        </div>
+        
+        <!-- Coding Bootcamp Event -->
+        <div class="news-section">
+            <div class="news-content">
+                <span class="event-badge">EVENT</span>
+                <h3>3-Day Coding and Computational Software Application Bootcamp</h3>
+                <p class="news-date">January 16-18, 2025</p>
+                <p class="event-location">Maths Laboratory, Federal University of Petroleum Resources</p>
+                <p class="news-description">
+                    Join us for an intensive 3-day bootcamp designed to equip participants with practical coding skills and computational software expertise. This hands-on training will cover essential tools and techniques for modern mathematical and data-driven research.
+                </p>
+                
+                <div class="takeaways">
+                    <h4>What You'll Learn:</h4>
+                    <ul>
+                        <li>Hands-on experience with coding and computational software applications</li>
+                        <li>Develop skills for mathematical modelling and simulation</li>
+                        <li>Data science fundamentals and practical implementation</li>
+                        <li>Machine learning techniques and real-world applications</li>
+                        <li>Industry-standard tools and best practices</li>
+                    </ul>
+                </div>
+                
+                <a href="#registration" class="news-link">Register Now</a>
+                <a href="#details" class="news-link" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); margin-left: 10px;">Learn More</a>
+            </div>
+            
+            <div class="news-image">
+                <img src="Bootcamp.jpeg" alt="Coding Bootcamp at FUPRE">
+            </div>
+        </div>
+        
+    </section>
+ 
+  
+<footer id="contact">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://web.facebook.com/people/Clinton-Oluranran-Kayoh"><i class="fab fa-facebook-f"></i></a>
+      <a href=" https://x.com/KayohClinton?t=mo8mduk1w13YogTb0kQzeA&s=08"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/KayohClinton"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ClintonKayoh"><i class="fab fa-github"></i></a>
+      <a href="https://www.researchgate.net/publication/394704096_On_the_Time_to_Stationarity_of_Peer-Driven_Adoption_and_Event-Driven_Abandonment_of_Digital_Asset_Trends_on_Social_Networks"><i class="fab fa-researchgate"></i></a>
+      <a href="https://scholar.google.com/citations?user=tQ_u2kEAAAAJ&hl=en"><i class="fab fa-google"></i></a>
+      <a href="https://independent.academia.edu/kayohclinton"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+    <p>&copy; 2025 Clinton Oluranran Kayoh. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+<script src="script.js"></script> 
+
+</body>
+</html>

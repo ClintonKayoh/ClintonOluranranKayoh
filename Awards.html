@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinton Oluranran Kayoh</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+ 
+</header>
+
+<!-- Theme Toggle Button -->
+<div class="theme-toggle-container">
+  <button class="theme-toggle-btn" id="themeToggleBtn">
+    <span>🎨</span>
+    <span id="currentThemeName">Default</span>
+  </button>
+  <div class="theme-menu" id="themeMenu" tabindex="0">
+    <div class="theme-option active" data-theme="default">
+      <div class="theme-color-preview" style="background: #1e3a5f;"></div>
+      <span>Default</span>
+    </div>
+    <div class="theme-option" data-theme="copper">
+      <div class="theme-color-preview" style="background: #c17d4d;"></div>
+      <span>Copper</span>
+    </div>
+    <div class="theme-option" data-theme="dark">
+      <div class="theme-color-preview" style="background: #1a1a2e;"></div>
+      <span>Dark Mode</span>
+    </div>
+    <div class="theme-option" data-theme="monochrome">
+      <div class="theme-color-preview" style="background: #ffff;"></div>
+      <span>Monochrome</span>
+    </div>
+    <div class="theme-option" data-theme="nature">
+      <div class="theme-color-preview" style="background: #2d6a4f;"></div>
+      <span>Green</span>
+    </div>
+    <div class="theme-option" data-theme="purple">
+      <div class="theme-color-preview" style="background: #6a4c93;"></div>
+      <span>Modern Purple</span>
+    </div>
+    <div class="theme-option" data-theme="gray">
+      <div class="theme-color-preview" style="background: #444;"></div>
+      <span>Gray</span>
+    </div>
+     <div class="theme-option" data-theme="red">
+      <div class="theme-color-preview" style="background: #800000;"></div>
+      <span>Red</span>
+    </div>
+     <div class="theme-option" data-theme="cyan">
+      <div class="theme-color-preview" style="background: #006064;"></div>
+      <span>Cyan</span>
+    </div>
+    <div class="theme-option" data-theme="gold">
+      <div class="theme-color-preview" style="background: #7a5901;"></div>
+      <span>Gold</span>
+    </div>
+     <div class="theme-option" data-theme="midnight">
+      <div class="theme-color-preview" style="background: #0d1b2a;"></div>
+      <span>Midnight</span>
+    </div>
+    <div class="theme-option" data-theme="brown">
+      <div class="theme-color-preview" style="background: #5c4033;"></div>
+      <span>Brown</span>
+    </div>
+     <div class="theme-option" data-theme="yellow">
+      <div class="theme-color-preview" style="background: #d4a017;"></div>
+      <span>Yellow</span>
+    </div>
+    <div class="theme-option" data-theme="orange">
+      <div class="theme-color-preview" style="background:  #ff6b35;"></div>
+      <span>Orange</span>
+    </div>
+    <div class="theme-option" data-theme="pink">
+      <div class="theme-color-preview" style="background:  #d16ba5;"></div>
+      <span>Pink</span>
+    </div>
+    <div class="theme-option" data-theme="teal">
+      <div class="theme-color-preview" style="background: #008b8b;"></div>
+      <span>Teal</span>
+    </div>
+     <div class="theme-option" data-theme="olive">
+      <div class="theme-color-preview" style="background: #708238;"></div>
+      <span>Olive</span>
+    </div>
+     <div class="theme-option" data-theme="crimson">
+      <div class="theme-color-preview" style="background:  #a4161a;"></div>
+      <span>Crimson</span>
+    </div>
+    <div class="theme-option" data-theme="amethyst">
+      <div class="theme-color-preview" style="background: #9b5de5;"></div>
+      <span>Amethyst</span>
+    </div>
+
+  </div>
+</div>
+<div><button id="textToggle" class="text-toggle">🌓 Toggle Text Color</button></div>
+
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="Research.html">Research</a>
+  <a href="Teaching.html">Teaching</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Software.html">Software</a>
+  <a href="Services.html">Services</a>
+  <a href="Awards.html">Achievements</a>
+  <a href="Resources.html">Resources</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1 class="typewriter">Clinton Oluranran Kayoh</h1>
+     <a href="index.html" class="btn">Home</a>
+      <a href="About.html" class="btn">About</a>
+    <a href="Research.html" class="btn">Research</a>
+    <a href="Teaching.html" class="btn">Teaching</a>
+     <a href="Projects.html" class="btn">Projects</a>
+    <a href="Software.html" class="btn">Software</a>
+     <a href="Services.html" class="btn">Services</a>
+     <a href="Awards.html" class="btn">Achievements</a>
+     <a href="Resources.html" class="btn">Resources</a>
+  </div>
+</section>
+
+ <!-- Welcome Section -->
+    <div class="welcome-section" id="top">
+        <div class="welcome-content">
+            <h1>Welcome to My Achievements</h1>
+            <p>Explore my journey through awards, certifications, skills, and professional development. Each accomplishment represents dedication, growth, and a commitment to excellence in mathematics.</p>
+            <div class="welcome-icons">
+                <i class="fas fa-trophy welcome-icon"></i>
+                <i class="fas fa-certificate welcome-icon"></i>
+                <i class="fas fa-code welcome-icon"></i>
+                <i class="fas fa-users welcome-icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Honours & Achievements -->
+        <section class="section" id="awards">
+            <h2 class="section-title">
+                <i class="fas fa-trophy"></i>
+                Honours & Achievements
+            </h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-title">Dean's Prize for Best Graduating Student</div>
+                    <div class="award-org">College of Science, FUPRE</div>
+                    <div class="award-year">2025</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">Best Graduating Student in Mathematics</div>
+                    <div class="award-org">Department of Mathematics, FUPRE</div>
+                    <div class="award-year">2025</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">i-Scholar Initiative Awardee</div>
+                    <div class="award-org">iSI 2025 Cohort</div>
+                    <div class="award-year">2025</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">Best College of Science Student of the Year</div>
+                    <div class="award-org">FUPRE</div>
+                    <div class="award-year">2023</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">Mathematics Class Valedictorian</div>
+                    <div class="award-org">College of Science, FUPRE</div>
+                    <div class="award-year">2023</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">NAMCOSS Most Sought-After Student</div>
+                    <div class="award-org">FUPRE</div>
+                    <div class="award-year">2021</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">Department of Mathematics Student of the Year</div>
+                    <div class="award-org">FUPRE</div>
+                    <div class="award-year">2020</div>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">Back to Top <i class="fas fa-arrow-up"></i></a>
+        </section>
+
+        <!-- Certifications -->
+        <section class="section" id="certifications">
+            <h2 class="section-title">
+                <i class="fas fa-certificate"></i>
+                Licenses & Certifications
+            </h2>
+            <div class="cert-list">
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                    <div class="cert-content">
+                        <div class="cert-name">Understanding Artificial Intelligence</div>
+                        <div class="cert-provider">DataCamp</div>
+                        <div class="cert-date">August 2023</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                    <div class="cert-content">
+                        <div class="cert-name">Large Language Models (LLMs) Concepts</div>
+                        <div class="cert-provider">DataCamp</div>
+                        <div class="cert-date">August 2023</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="cert-content">
+                        <div class="cert-name">Sampling in Python</div>
+                        <div class="cert-provider">DataCamp</div>
+                        <div class="cert-date">September 2023</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-search"></i></div>
+                    <div class="cert-content">
+                        <div class="cert-name">Exploratory Data Analysis in Python</div>
+                        <div class="cert-provider">DataCamp</div>
+                        <div class="cert-date">August 2023</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-table"></i></div>
+                    <div class="cert-content">
+                        <div class="cert-name">Data Manipulation in Pandas</div>
+                        <div class="cert-provider">DataCamp</div>
+                        <div class="cert-date">July 2023</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">Back to Top <i class="fas fa-arrow-up"></i></a>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Computing & Technical Skills
+            </h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-laptop-code"></i>
+                        Programming Languages
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">Julia</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">NoSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-database"></i>
+                        Big Data Tools
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Hadoop</span>
+                        <span class="skill-tag">Apache Spark</span>
+                        <span class="skill-tag">Apache Flink</span>
+                        <span class="skill-tag">Dask</span>
+                        <span class="skill-tag">Ray</span>
+                        <span class="skill-tag">Azure Synapse</span>
+                        <span class="skill-tag">TensorFlow Extended</span>
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">Snowflake</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-calculator"></i>
+                        Mathematical Software
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Mathematica</span>
+                        <span class="skill-tag">Maple</span>
+                        <span class="skill-tag">SageMath</span>
+                        <span class="skill-tag">Scilab</span>
+                        <span class="skill-tag">GAMS</span>
+                        <span class="skill-tag">Gnu Octave</span>
+                        <span class="skill-tag">Maxima</span>
+                        <span class="skill-tag">GAP</span>
+                        <span class="skill-tag">CoCalc</span>
+                        <span class="skill-tag">Wolfram Alpha</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-chart-line"></i>
+                        Statistical Software
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SAP</span>
+                        <span class="skill-tag">SAS</span>
+                        <span class="skill-tag">SPSS</span>
+                        <span class="skill-tag">Stata</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">SciPy</span>
+                        <span class="skill-tag">Scikit-Learn</span>
+                        <span class="skill-tag">JMP</span>
+                        <span class="skill-tag">EViews</span>
+                        <span class="skill-tag">Minitab</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-brain"></i>
+                        ML/Deep Learning
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">LightGBM</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">FastAI</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">NVIDIA CUDA</span>
+                        <span class="skill-tag">Amazon SageMaker</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-chart-pie"></i>
+                        Data Visualization
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Google Data Studio</span>
+                        <span class="skill-tag">QlikView</span>
+                        <span class="skill-tag">D3.js</span>
+                        <span class="skill-tag">Plotly</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-cloud"></i>
+                        Cloud Platforms
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS EC2</span>
+                        <span class="skill-tag">Azure VMs</span>
+                        <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">Heroku</span>
+                        <span class="skill-tag">IBM Cloud</span>
+                        <span class="skill-tag">Oracle Cloud</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-file-alt"></i>
+                        Typesetting Tools
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">Overleaf</span>
+                        <span class="skill-tag">LyX</span>
+                        <span class="skill-tag">MiKTeX</span>
+                        <span class="skill-tag">TeXstudio</span>
+                        <span class="skill-tag">XeLaTeX</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-tools"></i>
+                        Development Tools
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">PyCharm</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">
+                        <i class="fas fa-users"></i>
+                        Soft Skills
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Problem-Solving</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">Back to Top <i class="fas fa-arrow-up"></i></a>
+        </section>
+
+        <!-- Conferences -->
+        <section class="section" id="conferences">
+            <h2 class="section-title">
+                <i class="fas fa-users"></i>
+                Conferences & Workshops
+            </h2>
+            <div class="conference-timeline">
+                <div class="conference-item">
+                    <div class="conference-title">International Conference on Applied Science, Engineering and Management (ICASEM-2025)</div>
+                    <div class="conference-location">Namibia University of Science and Technology</div>
+                    <div class="conference-date">October 2025</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">College of Science 2nd Technical/International Conference</div>
+                    <div class="conference-location">Federal University of Petroleum Resources, Effurun</div>
+                    <div class="conference-date">September 2025</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">42nd Annual National Conference of the Nigerian Mathematical Society</div>
+                    <div class="conference-location">Ambrose Alli University (AAU), Ekpoma, Edo State</div>
+                    <div class="conference-date">May 2025</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">2nd International Conference on Mathematical Modelling, Optimization and Analysis of Disease Dynamics (ICMMOADD)</div>
+                    <div class="conference-location">Federal University of Technology, Minna, Niger State</div>
+                    <div class="conference-date">March 2025</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">College of Science Maiden Conference and Workshop</div>
+                    <div class="conference-location">Federal University of Petroleum Resources, Effurun</div>
+                    <div class="conference-date">November 2024</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">Transportation Systems and Traffic Modeling Workshop</div>
+                    <div class="conference-location">KAYBERNETICS LAB</div>
+                    <div class="conference-date">October 2024</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">Cryptographic Security Workshop</div>
+                    <div class="conference-location">KAYBERNETICS LAB</div>
+                    <div class="conference-date">April 2024</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">International Conference on Mathematical Modelling, Optimization and Analysis of Disease Dynamics (ICMMOADD)</div>
+                    <div class="conference-location">Federal University of Technology, Minna, Niger State</div>
+                    <div class="conference-date">February 2024</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">High-Performance Scientific Computing Workshop</div>
+                    <div class="conference-location">INTER-MATH LAB</div>
+                    <div class="conference-date">November 2023</div>
+                </div>
+                <div class="conference-item">
+                    <div class="conference-title">Epidemics on Complex Networks Workshop</div>
+                    <div class="conference-location">INTER-MATH LAB</div>
+                    <div class="conference-date">May 2023</div>
+                </div>
+                <div class="conference-item">
+                <div class="conference-title">PAMS Workshop on Cloud Computing and Mathematical Software (PAMSCM)</div>
+                  <div class="conference-location">FUPRE Comp Math Initiative</div>
+                <div class="conference-date">January 2022</div>
+                </div>
+                <a href="#top" class="back-to-top">Back to Top <i class="fas fa-arrow-up"></i></a>
+        </section>
+
+
+<!-- Professional Membership -->
+<section class="section" id="membership">
+    <h2 class="section-title">
+        <i class="fas fa-user-tie"></i>
+        Professional Membership
+    </h2>
+    <div class="membership-grid">
+        <div class="membership-card">
+            <div class="membership-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="membership-content">
+                <div class="membership-org">Nigerian Mathematical Society (NMS)</div>
+                <div class="membership-status">Member</div>
+                <div class="membership-year">Since 2023</div>
+                <a href="https://nigerianmathematicalsociety.org/multix/cms/" target="_blank" class="membership-link">
+                    <i class="fas fa-external-link-alt"></i> Visit Website
+                </a>
+            </div>
+        </div>
+
+        <div class="membership-card">
+            <div class="membership-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="membership-content">
+                <div class="membership-org">Mathematical Association of Nigeria (MAN)</div>
+                <div class="membership-status">Member</div>
+                <div class="membership-year">Since 2024</div>
+                <a href="https://www.man-nigeria.org.ng/" target="_blank" class="membership-link">
+                    <i class="fas fa-external-link-alt"></i> Visit Website
+                </a>
+            </div>
+        </div>
+    </div>
+    <a href="#top" class="back-to-top">Back to Top <i class="fas fa-arrow-up"></i></a>
+</section>
+</div>
+
+
+
+    
+<section>
+<footer id="contact">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://web.facebook.com/people/Clinton-Oluranran-Kayoh"><i class="fab fa-facebook-f"></i></a>
+      <a href=" https://x.com/KayohClinton?t=mo8mduk1w13YogTb0kQzeA&s=08"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/KayohClinton"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ClintonKayoh"><i class="fab fa-github"></i></a>
+      <a href="https://www.researchgate.net/publication/394704096_On_the_Time_to_Stationarity_of_Peer-Driven_Adoption_and_Event-Driven_Abandonment_of_Digital_Asset_Trends_on_Social_Networks"><i class="fab fa-researchgate"></i></a>
+      <a href="https://scholar.google.com/citations?user=tQ_u2kEAAAAJ&hl=en"><i class="fab fa-google"></i></a>
+      <a href="https://independent.academia.edu/kayohclinton"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+    <p>&copy; 2025 Clinton Oluranran Kayoh. All rights reserved.</p>
+  </div>
+</footer>
+</section>
+
+
+<script src="scriptrest.js"></script> 
+
+</body>
+</html>

@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinton Oluranran Kayoh</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      <style>
+        /* Animated Woven Threads Background */
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        .threads-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(25px);
+            border-radius: 30px;
+            border: 0.2px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            animation: floatIn 1.5s ease-out;
+        }
+
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .hero-content h1 {
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+       
+       
+        /* Main Container */
+        .main-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Research Interests Section */
+        .research-interests {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            border-radius: 2px;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .interest-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .interest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .interest-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .interest-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .interest-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+          /* Publications Section */
+        .publications-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 80px 40px;
+            border-radius: 30px;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .pub-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .pub-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .pub-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .pub-authors {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .pub-journal {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .pub-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 100%, var(--secondary-color) 0%);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .pub-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Ongoing Research Section */
+        .ongoing-section {
+            background: white;
+            padding: 80px 40px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .research-category {
+            margin-bottom: 20px;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .research-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .research-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .research-title {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .research-status {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publications-section,
+            .ongoing-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+ 
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+ 
+</header>
+
+<!-- Theme Toggle Button -->
+<div class="theme-toggle-container">
+  <button class="theme-toggle-btn" id="themeToggleBtn">
+    <span>🎨</span>
+    <span id="currentThemeName">Default</span>
+  </button>
+  <div class="theme-menu" id="themeMenu" tabindex="0">
+    <div class="theme-option active" data-theme="default">
+      <div class="theme-color-preview" style="background: #1e3a5f;"></div>
+      <span>Default</span>
+    </div>
+    <div class="theme-option" data-theme="copper">
+      <div class="theme-color-preview" style="background: #c17d4d;"></div>
+      <span>Copper</span>
+    </div>
+    <div class="theme-option" data-theme="dark">
+      <div class="theme-color-preview" style="background: #1a1a2e;"></div>
+      <span>Dark Mode</span>
+    </div>
+    <div class="theme-option" data-theme="monochrome">
+      <div class="theme-color-preview" style="background: #ffff;"></div>
+      <span>Monochrome</span>
+    </div>
+    <div class="theme-option" data-theme="nature">
+      <div class="theme-color-preview" style="background: #2d6a4f;"></div>
+      <span>Green</span>
+    </div>
+    <div class="theme-option" data-theme="purple">
+      <div class="theme-color-preview" style="background: #6a4c93;"></div>
+      <span>Modern Purple</span>
+    </div>
+    <div class="theme-option" data-theme="gray">
+      <div class="theme-color-preview" style="background: #444;"></div>
+      <span>Gray</span>
+    </div>
+     <div class="theme-option" data-theme="red">
+      <div class="theme-color-preview" style="background: #800000;"></div>
+      <span>Red</span>
+    </div>
+     <div class="theme-option" data-theme="cyan">
+      <div class="theme-color-preview" style="background: #006064;"></div>
+      <span>Cyan</span>
+    </div>
+    <div class="theme-option" data-theme="gold">
+      <div class="theme-color-preview" style="background: #7a5901;"></div>
+      <span>Gold</span>
+    </div>
+     <div class="theme-option" data-theme="midnight">
+      <div class="theme-color-preview" style="background: #0d1b2a;"></div>
+      <span>Midnight</span>
+    </div>
+    <div class="theme-option" data-theme="brown">
+      <div class="theme-color-preview" style="background: #5c4033;"></div>
+      <span>Brown</span>
+    </div>
+     <div class="theme-option" data-theme="yellow">
+      <div class="theme-color-preview" style="background: #d4a017;"></div>
+      <span>Yellow</span>
+    </div>
+    <div class="theme-option" data-theme="orange">
+      <div class="theme-color-preview" style="background:  #ff6b35;"></div>
+      <span>Orange</span>
+    </div>
+    <div class="theme-option" data-theme="pink">
+      <div class="theme-color-preview" style="background:  #d16ba5;"></div>
+      <span>Pink</span>
+    </div>
+    <div class="theme-option" data-theme="teal">
+      <div class="theme-color-preview" style="background: #008b8b;"></div>
+      <span>Teal</span>
+    </div>
+     <div class="theme-option" data-theme="olive">
+      <div class="theme-color-preview" style="background: #708238;"></div>
+      <span>Olive</span>
+    </div>
+     <div class="theme-option" data-theme="crimson">
+      <div class="theme-color-preview" style="background:  #a4161a;"></div>
+      <span>Crimson</span>
+    </div>
+    <div class="theme-option" data-theme="amethyst">
+      <div class="theme-color-preview" style="background: #9b5de5;"></div>
+      <span>Amethyst</span>
+    </div>
+
+  </div>
+</div>
+<div><button id="textToggle" class="text-toggle">🌓 Toggle Text Color</button></div>
+
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="Research.html">Research</a>
+  <a href="Teaching.html">Teaching</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Software.html">Software</a>
+  <a href="Services.html">Services</a>
+  <a href="Awards.html">Achievements</a>
+  <a href="Resources.html">Resources</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1 class="typewriter">Clinton Oluranran Kayoh</h1>
+     <a href="index.html" class="btn">Home</a>
+      <a href="About.html" class="btn">About</a>
+    <a href="Research.html" class="btn">Research</a>
+    <a href="Teaching.html" class="btn">Teaching</a>
+     <a href="Projects.html" class="btn">Projects</a>
+    <a href="Software.html" class="btn">Software</a>
+     <a href="Services.html" class="btn">Services</a>
+     <a href="Awards.html" class="btn">Achievements</a>
+     <a href="Resources.html" class="btn">Resources</a>
+  </div>
+</section>
+  
+    
+<section>
+    <!-- Hero Section --->
+     <div class="hero-section">
+    <canvas class="threads-canvas" id="threadsCanvas"></canvas>
+        <div class="hero-content">
+            <h1>Welcome to My Research</h1>
+            <p class="hero-subtitle"> By Mathematics' measured might, All hidden wonders break to light.</p>
+            <p class="hero-description">
+                Mathematics is the universal language through which we decipher the patterns,
+                 structures, and fundamental principles that govern our world. From the 
+                 elegance of pure theory to the power of applied solutions, mathematical 
+                 inquiry opens doors to understanding nature's deepest secrets and humanity's 
+                 greatest challenges. This space is dedicated to exploring the beauty and rigor 
+                 of mathematics research; where abstract concepts meet concrete applications and where curiosity drives discovery.
+                </p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down" style="font-size: 2rem; color: rgba(255,255,255,0.8);"></i>
+        </div>
+    </section>
+
+ 
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Research Interests Section -->
+        <section class="section" id="research-interests">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3 class="interest-title">Mathematical Biology</h3>
+                    <p>Modeling biological systems using mathematical frameworks, including gene regulatory networks and pharmacokinetics.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3 class="interest-title">Semigroup Theory & Algebraic Combinatorics</h3>
+                    <p>Exploring algebraic structures and their combinatorial properties with applications to transformation semigroups.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="interest-title">Graph Theory & Network Science</h3>
+                    <p>Analyzing complex networks and their structural properties in biological and social systems.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="interest-title">Fixed Point Theory, Optimization & Machine Learning</h3>
+                    <p>Developing algorithms for optimization problems and applying machine learning to complex systems.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3 class="interest-title">Stochastic Processes</h3>
+                    <p>Studying random walks and mixing times on various network structures and transformation semigroups.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="interest-title">Fluid Dynamics, Differential Equations & Numerical Methods</h3>
+                    <p>Modeling fluid-structure interactions and developing numerical methods for complex PDEs.</p>
+                </div>
+            </div>
+        </section>
+
+
+     
+      <!-- Publications -->
+        <section class="publications-section">
+            <h2 class="section-title">Publications</h2>
+            
+            <div class="pub-card">
+                <div class="pub-title">Towards Mechanism-Based Interventions for Auxin Signaling: Application of Algebraic Edge Control to a Boolean Network Model</div>
+                <div class="pub-authors">C. O. Kayoh and I. J. Ugbene (2023)</div>
+                <div class="pub-journal">International Journal of Mathematical Analysis and Modelling, Volume 6, Issue 2, October-November 2023, pages 31-40</div>
+                <a href="https://tnsmb.org/journal/index.php/ijmam/article/view/109" target="_blank" class="pub-link">
+                    <i class="fas fa-external-link-alt"></i> View Paper
+                </a>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">On the Time to Stationarity of Peer-Driven Adoption and Event-Driven Abandonment of Digital Asset Trends on Social Networks</div>
+                <div class="pub-authors">Agbedo E. I., Osanakpa R. O., Salami M. O, Kayoh C. O. and Ugbene I. J. (2025)</div>
+                <div class="pub-journal">International Journal of Scientific Research in Science and Technology, 12(4), 314-338</div>
+                <a href="https://doi.org/10.32628/IJSRST251246" target="_blank" class="pub-link">
+                    <i class="fas fa-external-link-alt"></i> View Paper
+                </a>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Modeling Kelp Forest Trophic Structure: An Algebraic Statistical Analysis of Species Interactions and Network Controls</div>
+                <div class="pub-authors">Ugbene I. J., and Kayoh C. O (2025)</div>
+                <div class="pub-journal">Proceedings of the International Conference on Applied Science, Engineering and Management, Namibia University of Science & Technology</div>
+                <span class="research-status" style="background: #28a745;">Conference Paper</span>
+            </div>
+        </section>    
+
+
+   <!-- Ongoing Research -->
+        <section class="ongoing-section">
+            <h2 class="section-title">Ongoing Research</h2>
+
+            <!-- Mathematical Biology -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-dna"></i> Mathematical Biology</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Can we find new drug targets by mapping malaria's on-off gene network?</div>
+                    <div class="pub-authors">Ebaifiyegha E. A., Kayoh C. O., Emunefe G. F. and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Impact of onset rate and duration of action on the forgiveness of arterolane-piperaquine in Malaria treatment</div>
+                    <div class="pub-authors">Ebaifiyegha E. A., Kayoh C. O., Emunefe G. F. and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">What should patients do when they miss a dose of the malaria drug arterolane-piperaquine: A theoretical perspective</div>
+                    <div class="pub-authors">Ebaifiyegha E. A., Kayoh C. O., Emunefe G. F. and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Do missed antibiotics doses alter the balance between plasmodium and bacterial co-infections?</div>
+                    <div class="pub-authors">Ebaifiyegha E. A., Kayoh C. O., Emunefe G. F. and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Designing medication schedules that reduces the risk of patients nonadherence to arterolane-piperaquine (Synriam) treatment for malaria</div>
+                    <div class="pub-authors">Ebaifiyegha E. A., Kayoh C. O., Emunefe G. F. and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Should a patient skip delayed doses of arterolane-piperaquine medication? A perspective based on pharmacokinetics</div>
+                    <div class="pub-authors">Ebaifiyegha E. A., Kayoh C. O., Emunefe G. F. and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+            </div>
+
+            <!-- Computational Neuroscience -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-brain"></i> Computational Neuroscience</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Delineating the Unique Impact of Microglial Versus Astrocytic Ensheathment on Synaptic Strength and Higher-Order Network Statistics</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Efficacy of Selectively Releasing PV Interneuron Synapses from Glial Ensheathment to Mitigate Post-Anesthesia Hyperactivity and Cognitive Deficits</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Incorporating Synaptic Pruning, Ion Buffering (K+), and Gliotransmitter Release into an Effective Glial Cell Model of Network Dynamics</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Investigating the Role of Synaptic Shielding in Sustained Pathological Network States in Models of Neurodegenerative Disease</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Assessing the Unique Roles of PV- and SST-Interneuron Synapse Ensheathment in Driving Gamma Coherence</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+            </div>
+
+            <!-- Fluid Dynamics -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-water"></i> Fluid Dynamics & Biomechanics</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Quantification of Single-Cell Viscoelasticity and Its Role in Flow-Induced Instabilities During Capillary Transport using High-Speed Deformability Cytometry</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Multi-Component Fluid-Structure Interaction (MCFS) and Gradient-Free Transport Mechanisms in Liquid-Lined Airways</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Non-Local Stress Modeling in Vascular Tissue using Atangana-Baleanu Fractional Operators for Aneurysm Rupture Risk Assessment</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Leveraging Operator Supervision (PI-DeepONet) for Real-Time, Scalable Surrogate Modeling of Patient-Specific Cardiac Hemodynamics</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+            </div>
+
+            <!-- Machine Learning -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-robot"></i> Machine Learning</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Hybrid CFD-PINN Framework for Integrating Patient-Specific Geometric Refinements and Sparse Clinical Data</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Physics-Informed Reinforcement Learning (PIRL) for Autonomous Optimization of Active Peristaltic Pumping and Drug Delivery Micro-systems</div>
+                    <div class="pub-authors">Kayoh C. O. (Future work)</div>
+                    <span class="research-status" style="background: #764ba2;">Future Work</span>
+                </div>
+            </div>
+
+            <!-- Stochastic Processes -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-random"></i> Stochastic Processes & Network Science</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Mixing, Passage and Hitting time of Random walks on balanced Functional Digraph of Semigroup Transformation</div>
+                    <div class="pub-authors">Agbedo E. I., Kayoh C. O., Osanakpa R. O., Salami M. O and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Cover time and Mixing time of Random walks on Hamiltonian and Eulerian Digraphs of Transformation Semigroups</div>
+                    <div class="pub-authors">Agbedo E. I., Kayoh C. O., Osanakpa R. O., Salami M. O and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Random Walks on Path structures of conjugate transformation semigroups and its passage, cover, mixing and hitting times</div>
+                    <div class="pub-authors">Agbedo E. I., Kayoh C. O., Osanakpa R. O., Salami M. O and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Random Walks of Tournament digraph and their passage and mixing time on the finite chains of transformation</div>
+                    <div class="pub-authors">Agbedo E. I., Kayoh C. O., Osanakpa R. O., Salami M. O and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+            </div>
+
+            <!-- Semigroup Theory -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-project-diagram"></i> Semigroup Theory & Algebraic Combinatorics</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Greens Relation of Non-Starlike Full transformation semigroup and some combinatorial results</div>
+                    <div class="pub-authors">Salami M. O, Osanakpa R. O., Kayoh C. O., Agbedo E. I., and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Bipartition Ranks and Combinatorial Invariants of the Non-Starlike Full Transformation Semigroup</div>
+                    <div class="pub-authors">Salami M. O, Osanakpa R. O., Kayoh C. O., Agbedo E. I., and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">The Structure of Principal Ideals and the Lattice of J-Classes in the Non-Starlike Full Transformation Semigroup</div>
+                    <div class="pub-authors">Salami M. O, Osanakpa R. O., Kayoh C. O., Agbedo E. I., and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Ranks and Spanning Properties: The Idempotent-Generated Sub-semigroup of the Non-Starlike Full Transformation Semigroup</div>
+                    <div class="pub-authors">Salami M. O, Osanakpa R. O., Kayoh C. O., Agbedo E. I., and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+            </div>
+
+            <!-- Graph Theory -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-sitemap"></i> Graph Theory & Conjugacy Classes</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Digraphs and Functional Digraphs of Conjugacy classes in the Non-Starlike Transformation Semigroups</div>
+                    <div class="pub-authors">Osanakpa R. O., Salami M. O., Agbedo E. I., Kayoh C. O. and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Path Structures in the Idempotent and Nilpotent Sub-semigroups of Non Starlike Transformation Semigroups</div>
+                    <div class="pub-authors">Osanakpa R. O., Salami M. O., Agbedo E. I., Kayoh C. O. and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Enumerating Conjugacy Classes in the Non Starlike Full Order-Decreasing Transformation Semigroup</div>
+                    <div class="pub-authors">Osanakpa R. O., Salami M. O., Agbedo E. I., Kayoh C. O. and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">The Index and Period Lengths within Conjugacy Classes of the Non starlike Full Contraction Transformation Semigroup</div>
+                    <div class="pub-authors">Osanakpa R. O., Salami M. O., Agbedo E. I., Kayoh C. O. and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+            </div>
+
+            <!-- Fixed Point Theory -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-crosshairs"></i> Fixed Point Theory</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Initial residual-hybrid algorithm for Approximating Fixed point of finite family of strictly pseudo-contractive mappings in normed linear spaces</div>
+                    <div class="pub-authors">Ogbodu J. O. and Kayoh C. O. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Approximating Fixed point of finite family of strictly pseudo-contractive mappings in normed linear spaces with Initial residual-Picard-Mann Algorithm</div>
+                    <div class="pub-authors">Ogbodu J. O. and Kayoh C. O. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Initial residual-Ishikawa algorithm for Approximating Fixed point of finite family of strictly pseudo-contractive mappings in normed linear spaces</div>
+                    <div class="pub-authors">Ogbodu J. O. and Kayoh C. O. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Initial residual-Gradient descent algorithm for Approximating Fixed point of finite family of strictly pseudo-contractive mappings in normed linear spaces</div>
+                    <div class="pub-authors">Ogbodu J. O. and Kayoh C. O. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+            </div>
+
+            <!-- Interdisciplinary -->
+            <div class="research-category">
+                <h3 class="category-title"><i class="fas fa-atom"></i> Interdisciplinary: Semigroup, Graph & Fixed Point Theory</h3>
+                
+                <div class="research-item">
+                    <div class="research-title">Non-expansive Total mappings of Semigroups in Waist Metric Spaces</div>
+                    <div class="pub-authors">Emunefe F. G., Ebaifiyegha E. A., Kayoh C. O. and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">On the Construction of Common Fixed Points for Order-decreasing Nonexpansive Semigroups in Waist Metric Spaces</div>
+                    <div class="pub-authors">Emunefe F. G., Ebaifiyegha E. A., Kayoh C. O. and Ugbene I. J. (2026)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Fixed Point Theorems for Nonexpansive Semigroups in Waist Metric Spaces with a graph</div>
+                    <div class="pub-authors">Emunefe F. G., Ebaifiyegha E. A., Kayoh C. O. and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Existence of Common Fixed Points for Asymptotic Pointwise Semigroups on Metric Spaces Endowed with a Directed Graph</div>
+                    <div class="pub-authors">Emunefe F. G., Ebaifiyegha E. A., Kayoh C. O. and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Common Fixed point for some generalized contractive mappings in a modular waist metric space with a graph</div>
+                    <div class="pub-authors">Emunefe F. G., Ebaifiyegha E. A., Kayoh C. O. and Ugbene I. J. (2027)</div>
+                    <span class="research-status">Ongoing Analysis</span>
+                </div>
+            </div>
+        </section>
+      </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+   
+
+
+<footer id="contact">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://web.facebook.com/people/Clinton-Oluranran-Kayoh"><i class="fab fa-facebook-f"></i></a>
+      <a href=" https://x.com/KayohClinton?t=mo8mduk1w13YogTb0kQzeA&s=08"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/KayohClinton"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ClintonKayoh"><i class="fab fa-github"></i></a>
+      <a href="https://www.researchgate.net/publication/394704096_On_the_Time_to_Stationarity_of_Peer-Driven_Adoption_and_Event-Driven_Abandonment_of_Digital_Asset_Trends_on_Social_Networks"><i class="fab fa-researchgate"></i></a>
+      <a href="https://scholar.google.com/citations?user=tQ_u2kEAAAAJ&hl=en"><i class="fab fa-google"></i></a>
+      <a href="https://independent.academia.edu/kayohclinton"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+    <p>&copy; 2025 Clinton Oluranran Kayoh. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+        // Animated Woven Threads Canvas
+        const canvas = document.getElementById('threadsCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Get current background color from CSS
+        function getBackgroundColor() {
+            const root = document.documentElement;
+            return getComputedStyle(root).getPropertyValue('--secondary-color').trim();
+        }
+
+        // Convert hex color to RGB
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            return { r, g, b };
+        }
+
+        // Convert RGB to RGBA string
+        function rgbToRgba(rgb, alpha = 1) {
+            return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+        }
+
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Thread class with CONSTANT colors (white, black, dark red)
+        class Thread {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * canvas.height;
+            }
+
+            reset() {
+                this.x = -50;
+                this.y = Math.random() * canvas.height;
+                this.length = Math.random() * 400 + 300;
+                this.speed = Math.random() * 1.2 + 0.3;
+                this.amplitude = Math.random() * 80 + 40;
+                this.frequency = Math.random() * 0.015 + 0.005;
+                
+                // CONSTANT COLOR PALETTE - Never changes with theme
+                this.colors = [
+                    'rgba(255, 255, 255, 0.9)',      // Pure White
+                    'rgba(0, 0, 0, 0.85)',           // Pure Black  
+                    'rgba(139, 0, 0, 0.9)',          // Dark Red (#8B0000)
+                    'rgba(255, 255, 255, 0.8)',      // White (variant)
+                    'rgba(0, 0, 0, 0.75)',           // Black (variant)
+                    'rgba(139, 0, 0, 0.85)'          // Dark Red (variant)
+                ];
+                this.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+                
+                this.offset = Math.random() * Math.PI * 2;
+                this.thickness = Math.random() * 8;
+            }
+
+            update() {
+                this.x += this.speed;
+                if (this.x > canvas.width + 100) {
+                    this.reset();
+                    this.x = -100;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.lineWidth = this.thickness;
+                ctx.strokeStyle = this.color;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                
+                for (let i = 0; i < this.length; i++) {
+                    const x = this.x + i;
+                    const y = this.y + Math.sin((this.x + i) * this.frequency + this.offset) * this.amplitude;
+                    
+                    if (i === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                
+                ctx.stroke();
+                
+                // Glow effect
+                ctx.shadowColor = this.color;
+                ctx.shadowBlur = 15;
+                ctx.stroke();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        // Create threads
+        const threads = [];
+        const threadCount = 8;
+        
+        for (let i = 0; i < threadCount; i++) {
+            threads.push(new Thread());
+        }
+
+        // Animation loop - checks background color every frame
+        function animate() {
+            // Get current background color on every frame
+            const currentColor = getBackgroundColor();
+            const rgbColor = hexToRgb(currentColor);
+            const backgroundColor = rgbToRgba(rgbColor, 1);
+
+            // Fill with current secondary color
+            ctx.fillStyle = backgroundColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw threads with constant colors
+            threads.forEach(thread => {
+                thread.update();
+                thread.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        // Start animation
+        animate();
+
+        // Rest of your existing code (scroll animations, etc.)
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.interest-card, .pub-card, .research-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        document.querySelectorAll('.interest-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        document.querySelectorAll('.research-item').forEach((card, index) => {
+            card.style.transitionDelay = `${(index % 10) * 0.05}s`;
+        });
+    </script>
+
+
+<script src="scriptrest.js"></script> 
+
+</body>
+</html>
